@@ -3,7 +3,7 @@ cores: 4
 disk:
 Filesystem      Size  Used Avail Use% Mounted on
 /dev/root       145G   59G   87G  41% /
--rw-r--r-- 1 runner runner 77860424 Sep 19 15:59 /tmp/godot.zip
+-rw-r--r-- 1 runner runner 77860424 Sep 19 16:52 /tmp/godot.zip
 Archive:  /tmp/godot.zip
   inflating: /tmp/godot/Godot_v4.7.2-stable_linux.x86_64  
 4.7.2.stable.official.ed1daf0bf
