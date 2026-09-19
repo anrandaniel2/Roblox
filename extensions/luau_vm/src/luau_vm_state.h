@@ -31,6 +31,8 @@ class LuauVMState : public RefCounted {
 	void _push_variant(const Variant &p_value);
 	Variant _read_variant(int p_index);
 	Variant _read_table(int p_index);
+	/** Pins a relative stack index so later pushes cannot move it. */
+	static int _absolute_index(lua_State *p_state, int p_index);
 
 protected:
 	static void _bind_methods();

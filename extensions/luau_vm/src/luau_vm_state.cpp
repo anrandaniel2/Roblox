@@ -288,33 +288,45 @@ void LuauVMState::_push_variant(const Variant &p_value) {
 	}
 }
 
+int LuauVMState::_absolute_index(lua_State *p_state, int p_index) {
+	if (p_index > 0 || p_index <= LUA_REGISTRYINDEX) {
+		return p_index;
+	}
+	return lua_gettop(p_state) + p_index + 1;
+}
+
 Variant LuauVMState::_read_variant(int p_index) {
-	switch (lua_type(state, p_index)) {
+	int index = _absolute_index(state, p_index);
+	switch (lua_type(state, index)) {
 		case LUA_TNIL:
 		case LUA_TNONE:
 			return Variant();
 		case LUA_TBOOLEAN:
-			return Variant(lua_toboolean(state, p_index) != 0);
+			return Variant(lua_toboolean(state, index) != 0);
 		case LUA_TNUMBER:
-			return Variant(lua_tonumber(state, p_index));
+			return Variant(lua_tonumber(state, index));
 		case LUA_TSTRING: {
 			size_t length = 0;
-			const char *text = lua_tolstring(state, p_index, &length);
+			const char *text = lua_tolstring(state, index, &length);
 			return Variant(String::utf8(text, static_cast<int>(length)));
 		}
 		case LUA_TTABLE:
-			return _read_table(p_index);
+			return _read_table(index);
 		default:
 			return Variant();
 	}
 }
 
 Variant LuauVMState::_read_table(int p_index) {
+	// Everything below pushes onto the stack, so work from a pinned index:
+	// a relative one would point at the iteration key instead of the table.
+	const int index = _absolute_index(state, p_index);
+
 	// Arrays are the common case: probe 1..n, and if the table holds nothing
 	// else it becomes a Godot Array, otherwise a Dictionary.
 	int array_length = 0;
 	while (true) {
-		lua_rawgeti(state, p_index, array_length + 1);
+		lua_rawgeti(state, index, array_length + 1);
 		bool is_nil = lua_isnil(state, -1);
 		lua_pop(state, 1);
 		if (is_nil) {
@@ -325,7 +337,7 @@ Variant LuauVMState::_read_table(int p_index) {
 
 	int entries = 0;
 	lua_pushnil(state);
-	while (lua_next(state, p_index) != 0) {
+	while (lua_next(state, index) != 0) {
 		entries++;
 		lua_pop(state, 1);
 	}
@@ -333,9 +345,9 @@ Variant LuauVMState::_read_table(int p_index) {
 	if (array_length > 0 && array_length == entries) {
 		Array array;
 		array.resize(array_length);
-		for (int index = 1; index <= array_length; index++) {
-			lua_rawgeti(state, p_index, index);
-			array[index - 1] = _read_variant(-1);
+		for (int slot = 1; slot <= array_length; slot++) {
+			lua_rawgeti(state, index, slot);
+			array[slot - 1] = _read_variant(-1);
 			lua_pop(state, 1);
 		}
 		return array;
@@ -343,7 +355,7 @@ Variant LuauVMState::_read_table(int p_index) {
 
 	Dictionary dictionary;
 	lua_pushnil(state);
-	while (lua_next(state, p_index) != 0) {
+	while (lua_next(state, index) != 0) {
 		Variant key = _read_variant(-2);
 		Variant value = _read_variant(-1);
 		dictionary[key] = value;
