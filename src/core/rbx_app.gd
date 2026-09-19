@@ -13,6 +13,7 @@ signal place_closed()
 signal busy_changed(busy: bool)
 
 var current_place: RBXPlace = null
+var script_runtime: RBXScriptRuntime = null
 var busy: bool = false
 var last_error: String = ""
 var last_source: String = ""
@@ -89,6 +90,8 @@ func reload() -> void:
 func close_place() -> void:
 	if current_place == null:
 		return
+	if script_runtime != null:
+		script_runtime.stop()
 	RbxLog.info("Closed %s." % current_place.name, "app")
 	current_place = null
 	last_error = ""
@@ -123,7 +126,20 @@ func _finish_load(place: RBXPlace) -> void:
 		RbxLog.info("%d renderable instances across %d root nodes." % [
 			place.renderable_count(), place.roots.size(),
 		], "importer")
+	_start_scripting(place)
 	place_loaded.emit(place)
+
+
+## Brings up the Luau runtime for the place.  A missing GDExtension is not an
+## error: the place still opens, it just has no behaviour.
+func _start_scripting(place: RBXPlace) -> void:
+	if not RbxSettings.scripting_enabled:
+		RbxLog.info("Scripting is disabled in settings.", "script")
+		return
+	if script_runtime == null:
+		script_runtime = RBXScriptRuntime.new()
+	if not script_runtime.start(place):
+		RbxLog.warn("Scripts were not started: %s" % script_runtime.last_error, "script")
 
 
 func _fail(path: String, message: String) -> void:
