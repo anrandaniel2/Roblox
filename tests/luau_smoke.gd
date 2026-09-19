@@ -85,7 +85,7 @@ func _test_functions(vm: Variant) -> void:
 
 
 func _test_errors_are_survivable(vm: Variant) -> void:
-	var ok := vm.run("error('this chunk is broken')", "broken")
+	var ok: bool = vm.run("error('this chunk is broken')", "broken")
 	_check(not ok, "a failing chunk reports failure")
 	_check(vm.has_error(), "the failure is queryable")
 	_check(String(vm.get_last_error()).contains("broken"), "the error message is preserved: %s" % vm.get_last_error())
@@ -102,7 +102,7 @@ func _test_sandbox(vm: Variant) -> void:
 	vm.sandbox()
 	_check(vm.is_sandboxed(), "sandbox() reports the state as sandboxed")
 
-	var escaped := vm.run("sneaky_global = 99", "escape")
+	var escaped: bool = vm.run("sneaky_global = 99", "escape")
 	_check(not escaped, "writing a new global inside a sandbox fails")
 	if not escaped:
 		print("    sandbox refused: %s" % vm.get_last_error())

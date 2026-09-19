@@ -34,8 +34,10 @@ for entry in sorted(os.listdir(luau_root)) if os.path.isdir(luau_root) else []:
 # Only what a runtime needs: parsing (Ast), bytecode generation (Compiler) and
 # execution (VM). CodeGen/Analysis/Inliner are for native codegen, type checking
 # and linting, none of which a game needs at run time.
+# Bytecode is not optional: it defines the fast-flag objects that the compiler
+# and the VM reference (missing it links with undefined `FFlag::*` symbols).
 luau_sources = []
-for part in ("Common/src", "Ast/src", "Compiler/src", "VM/src"):
+for part in ("Common/src", "Ast/src", "Bytecode/src", "Compiler/src", "VM/src"):
     luau_sources += Glob(os.path.join(luau_root, part, "*.cpp"))
 
 env.Append(CPPPATH=["src"])

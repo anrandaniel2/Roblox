@@ -223,7 +223,7 @@ func clipboard_set(text: String) -> void:
 
 func vibrate(duration_ms: int = 40) -> void:
 	if is_mobile():
-		DisplayServer.vibrate(duration_ms)
+		Input.vibrate_handheld(duration_ms)
 
 
 func _on_files_dropped(paths: PackedStringArray) -> void:
