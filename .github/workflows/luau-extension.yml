@@ -135,8 +135,12 @@ jobs:
         working-directory: extensions/luau_vm
         run: |
           set -o pipefail
+          # godot-cpp pins an NDK version of its own; tell it about the one the
+          # runner actually has instead of its built-in default.
+          NDK_VERSION="$(basename "${ANDROID_NDK_ROOT:-unknown}")"
+          echo "building with ndk_version=${NDK_VERSION}" | tee -a "$GITHUB_WORKSPACE/.ci/luau-android.log"
           scons -j"$(nproc)" platform=android arch=arm64 target=template_release api_version=4.7 \
-            2>&1 | tee -a "$GITHUB_WORKSPACE/.ci/luau-android.log"
+            "ndk_version=${NDK_VERSION}" 2>&1 | tee -a "$GITHUB_WORKSPACE/.ci/luau-android.log"
 
       - uses: actions/upload-artifact@v4
         with:

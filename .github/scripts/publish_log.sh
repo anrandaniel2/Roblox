@@ -9,22 +9,23 @@ set -u
 log_path="${1:?usage: publish_log.sh <path>}"
 
 mkdir -p .ci
+if [ ! -s "$log_path" ]; then
+	echo "(no output was captured for this job)" > "$log_path"
+fi
 {
-	echo "workflow: ${GITHUB_WORKFLOW:-local}"
-	echo "job: ${GITHUB_JOB:-local}"
-	echo "run: ${GITHUB_RUN_ID:-local}"
-	echo "commit: ${GITHUB_SHA:-local}"
-	echo "status: ${JOB_STATUS:-unknown}"
-} > "${log_path}.meta"
+	echo ""
+	echo "--- ${GITHUB_WORKFLOW:-local} / ${GITHUB_JOB:-local} / run ${GITHUB_RUN_ID:-local} / status ${JOB_STATUS:-unknown} / $(date -u +%Y-%m-%dT%H:%M:%SZ) ---"
+} >> "$log_path"
 
 git config user.email "ci@arena.ai"
 git config user.name "arena-ci"
 
 for attempt in 1 2 3; do
-	git add "$log_path" "${log_path}.meta" || true
+	git add -A .ci
 	if git diff --cached --quiet; then
-		echo "nothing to publish for $log_path"
-		exit 0
+		# Never report success without publishing something.
+		echo "retry marker ${attempt} $(date -u +%s)" >> "$log_path"
+		git add -A .ci
 	fi
 	git commit -q -m "ci: build log ($(basename "$log_path")) [skip ci]" || true
 	git pull --rebase --autostash -q origin arena/01a0ba62-roblox >/dev/null 2>&1 || true
@@ -32,9 +33,10 @@ for attempt in 1 2 3; do
 		echo "published $log_path"
 		exit 0
 	fi
-	echo "push attempt $attempt failed, retrying"
+	echo "push attempt ${attempt} failed, retrying"
 	sleep 5
 done
 
 echo "could not publish $log_path" >&2
+git --no-pager log --oneline -3 >&2 || true
 exit 1
