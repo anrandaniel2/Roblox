@@ -1,0 +1,20 @@
+# Godot
+.godot/
+*.translation
+export_presets.cfg
+*.apk
+*.aab
+*.ipa
+build/
+web/
+# Tooling
+__pycache__/
+*.pyc
+/tmp/
+.venv/
+node_modules/
+
+# Luau GDExtension: fetched dependencies and build output
+extensions/luau_vm/extern/
+extensions/luau_vm/bin/
+.sconsign.dblite

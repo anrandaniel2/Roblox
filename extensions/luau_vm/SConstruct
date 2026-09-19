@@ -1,0 +1,46 @@
+#!/usr/bin/env python
+"""Builds the Luau GDExtension.
+
+Run from this directory after `python3 tools/fetch_deps.py`:
+
+    scons platform=linux arch=x86_64 target=template_release api_version=4.7
+
+The environment (platform flags, `target`, `arch`, output suffix) comes from
+godot-cpp's own SConstruct, which is included below; Luau's sources are then
+compiled straight into the extension so there is no runtime dependency to ship.
+"""
+import os
+
+env = SConscript("extern/godot-cpp/SConstruct")
+
+luau_root = os.path.join("extern", "luau")
+
+# headers: Common (spans), Ast, Compiler (luau_compile) and the VM itself.
+for include in ("Common/include", "Ast/include", "Compiler/include", "VM/include"):
+    env.Append(CPPPATH=[os.path.join(luau_root, include)])
+
+# Only what a runtime needs: parsing (Ast), bytecode generation (Compiler) and
+# execution (VM). CodeGen/Analysis/Inliner are for native codegen, type checking
+# and linting, none of which a game needs at run time.
+luau_sources = []
+for part in ("Common/src", "Ast/src", "Compiler/src", "VM/src"):
+    luau_sources += Glob(os.path.join(luau_root, part, "*.cpp"))
+
+env.Append(CPPPATH=["src"])
+sources = Glob("src/*.cpp") + luau_sources
+
+if not luau_sources:
+    raise SCons.Errors.UserError(
+        "Luau sources not found under %s — run `python3 tools/fetch_deps.py` first." % luau_root
+    )
+
+if env["platform"] == "macos":
+    library = env.SharedLibrary(
+        "bin/libluau_vm{}.framework/libluau_vm{}".format(env["suffix"], env["suffix"]),
+        source=sources,
+    )
+else:
+    library = env.SharedLibrary("bin/libluau_vm{}{}".format(env["suffix"], env["SHLIBSUFFIX"]), source=sources)
+
+env.NoCache(library)
+Default(library)

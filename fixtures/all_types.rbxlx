@@ -1,0 +1,138 @@
+<roblox version="4">
+	<Meta name="ExplicitAutoJoints">true</Meta>
+	<External>null</External>
+	<External>nil</External>
+	<Item class="Folder" referent="RBX-1">
+		<Properties>
+			<string name="Name">AllTypes</string>
+		</Properties>
+		<Item class="Folder" referent="RBX-1">
+			<Properties>
+				<string name="Name">Values</string>
+			</Properties>
+			<Item class="StringValue" referent="RBX-1">
+				<Properties>
+					<string name="Name">String</string>
+					<string name="Value">hello ☃</string>
+				</Properties>
+			</Item>
+			<Item class="BoolValue" referent="RBX-1">
+				<Properties>
+					<string name="Name">Bool</string>
+					<bool name="Value">true</bool>
+				</Properties>
+			</Item>
+			<Item class="IntValue" referent="RBX-1">
+				<Properties>
+					<string name="Name">Int</string>
+					<int name="Value">-42</int>
+				</Properties>
+			</Item>
+			<Item class="NumberValue" referent="RBX-1">
+				<Properties>
+					<string name="Name">Number</string>
+					<float name="Value">0.15625</float>
+				</Properties>
+			</Item>
+			<Item class="BrickColorValue" referent="RBX-1">
+				<Properties>
+					<string name="Name">BrickColor</string>
+					<int name="Value">194</int>
+				</Properties>
+			</Item>
+			<Item class="Color3Value" referent="RBX-1">
+				<Properties>
+					<string name="Name">Color</string>
+					<Color3 name="Value"><R>0.25</R><G>0.5</G><B>0.75</B></Color3>
+				</Properties>
+			</Item>
+			<Item class="Vector3Value" referent="RBX-1">
+				<Properties>
+					<string name="Name">Vector</string>
+					<Vector3 name="Value"><X>1.5</X><Y>-2.25</Y><Z>3</Z></Vector3>
+				</Properties>
+			</Item>
+			<Item class="CFrameValue" referent="RBX-1">
+				<Properties>
+					<string name="Name">Transform</string>
+					<CoordinateFrame name="Value"><X>1</X><Y>2</Y><Z>3</Z><R00>1</R00><R01>0</R01><R02>0</R02><R10>0</R10><R11>1</R11><R12>0</R12><R20>0</R20><R21>0</R21><R22>1</R22></CoordinateFrame>
+				</Properties>
+			</Item>
+			<Item class="NumberRangeValue" referent="RBX-1">
+				<Properties>
+					<string name="Name">Range</string>
+					<NumberRange name="Value">0.25 0.75 </NumberRange>
+				</Properties>
+			</Item>
+		</Item>
+		<Item class="Folder" referent="RBX-1">
+			<Properties>
+				<string name="Name">Sequences</string>
+			</Properties>
+			<Item class="ParticleEmitter" referent="RBX-1">
+				<Properties>
+					<string name="Name">Emitter</string>
+					<NumberSequence name="Transparency">0 1 0 0.5 0.25 0.1 1 0 0 </NumberSequence>
+					<ColorSequence name="Color">0 1 0 0 0 1 0 0 1 0 </ColorSequence>
+				</Properties>
+			</Item>
+			<Item class="ImageLabel" referent="RBX-1">
+				<Properties>
+					<string name="Name">Image</string>
+					<Rect2D name="SliceCenter"><min><X>0</X><Y>0</Y></min><max><X>32</X><Y>32</Y></max></Rect2D>
+				</Properties>
+			</Item>
+		</Item>
+		<Item class="Part" referent="RBX-1">
+			<Properties>
+				<string name="Name">PhysicsPart</string>
+				<Vector3 name="size"><X>4</X><Y>1</Y><Z>2</Z></Vector3>
+				<CoordinateFrame name="CFrame"><X>10</X><Y>5</Y><Z>0</Z><R00>1</R00><R01>0</R01><R02>0</R02><R10>0</R10><R11>1</R11><R12>0</R12><R20>0</R20><R21>0</R21><R22>1</R22></CoordinateFrame>
+				<Color3uint8 name="Color3uint8">4291045404</Color3uint8>
+				<token name="Material">256</token>
+				<bool name="Anchored">true</bool>
+				<bool name="CanCollide">true</bool>
+				<token name="shape">1</token>
+				<PhysicalProperties name="CustomPhysicalProperties"><CustomPhysics>true</CustomPhysics><Density>0.9</Density><Friction>0.6</Friction><Elasticity>0.4</Elasticity><FrictionWeight>1</FrictionWeight><ElasticityWeight>1</ElasticityWeight><AcousticAbsorption>1</AcousticAbsorption></PhysicalProperties>
+				<float name="Transparency">0.5</float>
+				<float name="Reflectance">0.25</float>
+			</Properties>
+		</Item>
+		<Item class="Part" referent="RBX-1">
+			<Properties>
+				<string name="Name">Referenced</string>
+				<Vector3 name="size"><X>2</X><Y>2</Y><Z>2</Z></Vector3>
+				<CoordinateFrame name="CFrame"><X>4</X><Y>4</Y><Z>4</Z><R00>1</R00><R01>0</R01><R02>0</R02><R10>0</R10><R11>1</R11><R12>0</R12><R20>0</R20><R21>0</R21><R22>1</R22></CoordinateFrame>
+				<bool name="Anchored">true</bool>
+				<Color3uint8 name="Color3uint8">4279069100</Color3uint8>
+				<token name="Material">256</token>
+				<bool name="CanCollide">true</bool>
+			</Properties>
+		</Item>
+		<Item class="ObjectValue" referent="RBX-1">
+			<Properties>
+				<string name="Name">Link</string>
+				<Ref name="Value">RBX-1</Ref>
+			</Properties>
+		</Item>
+		<Item class="Part" referent="RBX-1">
+			<Properties>
+				<string name="Name">Attributed</string>
+				<Vector3 name="size"><X>3</X><Y>3</Y><Z>3</Z></Vector3>
+				<CoordinateFrame name="CFrame"><X>-6</X><Y>3</Y><Z>0</Z><R00>1</R00><R01>0</R01><R02>0</R02><R10>0</R10><R11>1</R11><R12>0</R12><R20>0</R20><R21>0</R21><R22>1</R22></CoordinateFrame>
+				<bool name="Anchored">true</bool>
+				<Color3uint8 name="Color3uint8">4294298928</Color3uint8>
+				<token name="Material">256</token>
+				<bool name="CanCollide">true</bool>
+				<BinaryString name="AttributesSerialize">BAAAAAYAAABIZWFsdGgEZAAAAAgAAABGcmllbmRseQMBBQAAAExhYmVsAgQAAAB0ZXN0BQAAAFNwZWVkBgAAAAAAAPg/</BinaryString>
+			</Properties>
+		</Item>
+		<Item class="Script" referent="RBX-1">
+			<Properties>
+				<string name="Name">Hello</string>
+				<bool name="Disabled">false</bool>
+				<ProtectedString name="Source"><![CDATA[print("hello from Luau")]]></ProtectedString>
+			</Properties>
+		</Item>
+	</Item>
+</roblox>
