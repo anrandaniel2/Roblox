@@ -1,9 +1,9 @@
 4.7.2.stable.official.ed1daf0bf
 total 4228
-drwxr-xr-x 2 runner runner    4096 Sep 19 18:37 .
-drwxr-xr-x 4 runner runner    4096 Sep 19 18:37 ..
--rw-r--r-- 1 runner runner 2088696 Sep 19 18:37 libluau_vm.linux.template_debug.x86_64.so
--rw-r--r-- 1 runner runner 2231856 Sep 19 18:37 libluau_vm.linux.template_release.x86_64.so
+drwxr-xr-x 2 runner runner    4096 Sep 19 18:52 .
+drwxr-xr-x 4 runner runner    4096 Sep 19 18:52 ..
+-rw-r--r-- 1 runner runner 2088696 Sep 19 18:52 libluau_vm.linux.template_debug.x86_64.so
+-rw-r--r-- 1 runner runner 2231856 Sep 19 18:52 libluau_vm.linux.template_release.x86_64.so
 Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 
 [   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
@@ -160,8 +160,8 @@ Godot 4.7.2-stable (official)
   ok    host-injected globals still work while sandboxed
   ok    globals injected before the sandbox are still readable
 --- luau_vm smoke test passed ---
-[18:37:22] INFO  app: Rbx Engine 1.0.0 on Linux.
-[18:37:22] INFO  app: Input: mouse + keyboard. Quality: HIGH.
+[18:53:00] INFO  app: Rbx Engine 1.0.0 on Linux.
+[18:53:00] INFO  app: Input: mouse + keyboard. Quality: HIGH.
 Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
@@ -187,42 +187,48 @@ Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpect
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
    at: hex_to_int (core/string/ustring.cpp:2216)
-[18:37:23] INFO  app: Rbx Engine 1.0.0 on Linux.
-[18:37:23] INFO  app: Input: mouse + keyboard. Quality: HIGH.
+[18:53:00] INFO  app: Rbx Engine 1.0.0 on Linux.
+[18:53:00] INFO  app: Input: mouse + keyboard. Quality: HIGH.
 --- roblox api smoke test ---
 Godot 4.7.2-stable (official)
-[18:37:23] INFO  data: Loaded 892 classes, 596 enums, 208 BrickColors.
-[18:37:23] INFO  script: Roblox API installed into the Luau state.
-[18:37:23] INFO  script: Luau runtime ready: 0 script(s) ran.
+[18:53:00] INFO  data: Loaded 892 classes, 596 enums, 208 BrickColors.
+[18:53:00] INFO  script: Roblox API installed into the Luau state.
+[18:53:00] INFO  script: Luau runtime ready: 0 script(s) ran.
   ok   the Luau runtime started
-[18:37:23] ERROR script: @api_test: api_test:3: attempt to index nil with 'new'
-[18:37:23] DEBUG script: @api_test traceback:
-api_test:3: attempt to index nil with 'new'
-  FAIL the API script ran: 
-  FAIL the script did not leave a result table (got <null>)
-  FAIL Instance.new added the part to the data model
-  FAIL the folder was parented too
-  FAIL the imported scene sees the new part
-[18:37:23] ERROR script: @broken: broken:1: script blew up
-[18:37:23] DEBUG script: @broken traceback:
+api test script finished
+  ok   the API script ran: 
+  ok   Name reads back through the bridge
+  ok   a boolean property round-trips
+  ok   Parent resolves to the service
+  ok   typeof() recognises an instance
+  ok   the new instances are children of workspace
+  ok   Vector3 addition works
+  ok   Vector3.Magnitude works
+  ok   Vector3 scaling works
+  FAIL GetFullName() walks the tree
+  ok   a Vector3 property reads back as x/y/z
+  ok   Instance.new added the part to the data model
+  ok   the new instance has the requested class
+  ok   the size written from Luau is a Vector3 in the data model (got (4.0, 1.0, 2.0))
+  ok   the anchored flag reached the data model
+  ok   the folder was parented too
+  ok   the imported scene sees the new part
+[18:53:00] ERROR script: @broken: broken:1: script blew up
+[18:53:00] DEBUG script: @broken traceback:
 broken:1: script blew up
   ok   a failing script reports failure
   ok   the runtime keeps working after an error
   ok   state survives a failed script
   ok   the instance methods ran: 
-  FAIL GetChildren() lists the new instances
-  FAIL FindFirstChild() finds by name
-  FAIL GetDescendants() walks the tree
-  FAIL IsA() consults the reflection database
-LUA_API_SMOKE FAIL checks=13 failures=9
-  - the API script ran: 
-  - the script did not leave a result table (got <null>)
-  - Instance.new added the part to the data model
-  - the folder was parented too
-  - the imported scene sees the new part
-  - GetChildren() lists the new instances
-  - FindFirstChild() finds by name
-  - GetDescendants() walks the tree
-  - IsA() consults the reflection database
+  ok   GetChildren() lists the new instances
+  ok   FindFirstChild() finds by name
+  ok   GetDescendants() walks the tree
+  ok   IsA() consults the reflection database
+LUA_API_SMOKE FAIL checks=26 failures=1
+  - GetFullName() walks the tree
+WARNING: 5 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 1 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)
 
---- Luau extension / smoke-linux / run 35461213210 / status failure / 2026-09-19T18:37:23Z ---
+--- Luau extension / smoke-linux / run 35462005225 / status failure / 2026-09-19T18:53:01Z ---
