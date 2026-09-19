@@ -39,11 +39,14 @@ ERROR: Failed to load script "res://src/core/rbx_app.gd" with error "Parse error
 [0m
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 SCRIPT ERROR: Parse Error: The method "to_string()" overrides a method from native class "Object". This won't be called by the engine and may not work as expected. (Warning treated as error.)
           at: GDScript::reload (res://src/rbx/instance.gd:347)
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
-Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
 SCRIPT ERROR: Parse Error: Identifier "Compression" not declared in the current scope.
           at: GDScript::reload (res://src/rbx/file_loader.gd:58)
 SCRIPT ERROR: Parse Error: Identifier "Compression" not declared in the current scope.
@@ -51,32 +54,32 @@ SCRIPT ERROR: Parse Error: Identifier "Compression" not declared in the current 
 SCRIPT ERROR: Parse Error: Cannot infer the type of "decompressed" variable because the value doesn't have a set type.
           at: GDScript::reload (res://src/rbx/file_loader.gd:58)
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
-ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
-   at: hex_to_int (core/string/ustring.cpp:2216)
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
-Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
-[   0% ] [90m[1mupdate_scripts_classes[22m | Started Registering global classes... (19 steps)[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started Registering global classes... (22 steps)[39m[0m
 [   0% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
-[   5% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
-[  10% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
-[  15% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
-[  20% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
-[  25% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
-[  30% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
-[  35% ] [90m[1mupdate_scripts_classes[22m | RBXSceneBuilder[39m[0m
-[  40% ] [90m[1mupdate_scripts_classes[22m | RBXBinaryReader[39m[0m
-[  45% ] [90m[1mupdate_scripts_classes[22m | RBXByteReader[39m[0m
-[  50% ] [90m[1mupdate_scripts_classes[22m | RBXValues[39m[0m
-[  55% ] [90m[1mupdate_scripts_classes[22m | RBXFileLoader[39m[0m
+[   4% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   8% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  13% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  17% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  21% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  26% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  30% ] [90m[1mupdate_scripts_classes[22m | RBXSceneBuilder[39m[0m
+[  34% ] [90m[1mupdate_scripts_classes[22m | RBXScriptAPI[39m[0m
+[  39% ] [90m[1mupdate_scripts_classes[22m | RBXScriptRuntime[39m[0m
+[  43% ] [90m[1mupdate_scripts_classes[22m | RBXBinaryReader[39m[0m
+[  47% ] [90m[1mupdate_scripts_classes[22m | RBXByteReader[39m[0m
+[  52% ] [90m[1mupdate_scripts_classes[22m | RBXValues[39m[0m
+[  56% ] [90m[1mupdate_scripts_classes[22m | RBXFileLoader[39m[0m
 [  60% ] [90m[1mupdate_scripts_classes[22m | RBXInstance[39m[0m
 [  65% ] [90m[1mupdate_scripts_classes[22m | RBXLZ4[39m[0m
-[  70% ] [90m[1mupdate_scripts_classes[22m | RBXPlace[39m[0m
-[  75% ] [90m[1mupdate_scripts_classes[22m | RBXXmlReader[39m[0m
-[  80% ] [90m[1mupdate_scripts_classes[22m | RBXPlaceView[39m[0m
-[  85% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
-[  90% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  69% ] [90m[1mupdate_scripts_classes[22m | RBXPlace[39m[0m
+[  73% ] [90m[1mupdate_scripts_classes[22m | RBXXmlReader[39m[0m
+[  78% ] [90m[1mupdate_scripts_classes[22m | RBXPlaceView[39m[0m
+[  82% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  86% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  91% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
 [92m[ DONE ][39m [1mupdate_scripts_classes[22m
 [0m
 ERROR: Can't open dynamic library, file not found: '/home/runner/work/Roblox/Roblox/extensions/luau_vm/bin/libluau_vm.linux.template_debug.x86_64.so'.
@@ -169,8 +172,8 @@ SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
           at: GDScript::reload (res://src/app/main.gd:0)
 ERROR: Failed to load script "res://src/app/main.gd" with error "Compilation failed".
    at: load (modules/gdscript/gdscript_resource_format.cpp:46)
-[18:10:42] INFO  app: Rbx Engine 1.0.0 on Linux.
-[18:10:42] INFO  app: Input: mouse + keyboard. Quality: HIGH.
+[18:12:27] INFO  app: Rbx Engine 1.0.0 on Linux.
+[18:12:27] INFO  app: Input: mouse + keyboard. Quality: HIGH.
 ERROR: Can't open dynamic library, file not found: '/home/runner/work/Roblox/Roblox/extensions/luau_vm/bin/libluau_vm.linux.template_debug.x86_64.so'.
    at: open_dynamic_library (drivers/unix/os_unix.cpp:1063)
 ERROR: GDExtension dynamic library not found: 'res://extensions/luau_vm/luau_vm.gdextension'.
@@ -212,8 +215,8 @@ SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
           at: GDScript::reload (res://tests/core_smoke.gd:0)
 ERROR: Failed to load script "res://tests/core_smoke.gd" with error "Compilation failed".
    at: load (modules/gdscript/gdscript_resource_format.cpp:46)
-[18:10:44] INFO  app: Rbx Engine 1.0.0 on Linux.
-[18:10:44] INFO  app: Input: mouse + keyboard. Quality: HIGH.
+[18:12:29] INFO  app: Rbx Engine 1.0.0 on Linux.
+[18:12:29] INFO  app: Input: mouse + keyboard. Quality: HIGH.
 --- core smoke test ---
 Godot 4.7.2-stable (official)
 SCRIPT ERROR: Invalid call. Nonexistent function 'is_supported' in base 'GDScript'.
@@ -221,10 +224,10 @@ SCRIPT ERROR: Invalid call. Nonexistent function 'is_supported' in base 'GDScrip
           GDScript backtrace (most recent call first):
               [0] _fixture_files (res://tests/core_smoke.gd:63)
               [1] _ready (res://tests/core_smoke.gd:46)
-[18:10:44] WARN  data: Could not open res://data/reflection.json.gz for reading.
-[18:10:44] WARN  data: Could not open res://data/enums.json.gz for reading.
-[18:10:44] WARN  data: Could not open res://data/brickcolors.json.gz for reading.
-[18:10:44] WARN  data: Reflection database not found; property names will be used verbatim.
+[18:12:29] WARN  data: Could not open res://data/reflection.json.gz for reading.
+[18:12:29] WARN  data: Could not open res://data/enums.json.gz for reading.
+[18:12:29] WARN  data: Could not open res://data/brickcolors.json.gz for reading.
+[18:12:29] WARN  data: Reflection database not found; property names will be used verbatim.
   FAIL the reflection database knows Part
   FAIL the reflection database knows MeshPart
   FAIL Part is a BasePart
@@ -249,4 +252,4 @@ CORE_SMOKE FAIL checks=9 failures=8
   - the default Part.Anchored is false
   - Material.Plastic is 256 (got 0)
 
---- Smoke / core / run 35460347278 / status failure / 2026-09-19T18:10:44Z ---
+--- Smoke / core / run 35460445184 / status failure / 2026-09-19T18:12:29Z ---
