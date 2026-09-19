@@ -49,6 +49,7 @@ func _ready() -> void:
 	_check_values()
 	_check_reflection()
 	_check_instance_model()
+	_check_scene_builder()
 	_finish()
 
 
@@ -237,6 +238,95 @@ func _find_in(instance: RBXInstance, wanted: String) -> RBXInstance:
 		return instance
 	for child: RBXInstance in instance.children:
 		var found := _find_in(child, wanted)
+		if found != null:
+			return found
+	return null
+
+
+# ---------------------------------------------------------------------------
+# The scene builder
+# ---------------------------------------------------------------------------
+
+func _check_scene_builder() -> void:
+	var holder := Node3D.new()
+	holder.name = "BuilderCheck"
+	add_child(holder)
+
+	for file in ["demo_obby.rbxl", "parts-1000.rbxm"]:
+		var place: RBXPlace = _loaded.get(file, null)
+		if place == null:
+			continue
+		var root := Node3D.new()
+		root.name = "Built_" + file.get_basename()
+		holder.add_child(root)
+
+		var builder := RBXSceneBuilder.new(RbxSettings)
+		var stats := builder.build(place, root)
+		var meshes := _count_of_class(root, "MeshInstance3D")
+		var bodies := _count_of_class(root, "StaticBody3D") + _count_of_class(root, "RigidBody3D")
+		print("IMPORT file=%s nodes=%d parts=%d meshes=%d bodies=%d skipped=%d capped=%d" % [
+			file,
+			int(stats.get("nodes", 0)),
+			int(stats.get("parts", 0)),
+			meshes,
+			bodies,
+			int(stats.get("skipped", 0)),
+			int(stats.get("capped", 0)),
+		])
+
+		var parts := int(stats.get("parts", 0))
+		_check(int(stats.get("nodes", 0)) > 0, "%s produced scene nodes" % file)
+		_check(parts > 0, "%s produced parts" % file)
+		_check(meshes >= parts, "%s gave every part a mesh (%d meshes, %d parts)" % [file, meshes, parts])
+		_check(bodies > 0, "%s produced collision bodies" % file)
+
+	# A built node must carry the transform its instance had in the file.
+	var obby: RBXPlace = _loaded.get("demo_obby.rbxl", null)
+	var part := _find_class(obby, "Part") if obby != null else null
+	if part != null:
+		var node := _find_by_id(holder, part.id)
+		_check(node is Node3D, "the importer tagged the node for instance %d" % part.id)
+		if node is Node3D:
+			var expected: Variant = part.get_property("CFrame")
+			if expected is Transform3D:
+				var want: Transform3D = expected
+				_check((node as Node3D).transform.origin.is_equal_approx(want.origin),
+					"the built transform matches the part's CFrame (%s vs %s)" % [
+						str((node as Node3D).transform.origin), str(want.origin)])
+
+	holder.queue_free()
+
+
+func _count_of_class(node: Node, engine_class: String) -> int:
+	var total := 1 if node.is_class(engine_class) else 0
+	for child in node.get_children():
+		total += _count_of_class(child, engine_class)
+	return total
+
+
+func _find_class(place: RBXPlace, rbx_class: String) -> RBXInstance:
+	for root: RBXInstance in place.roots:
+		var found := _find_class_in(root, rbx_class)
+		if found != null:
+			return found
+	return null
+
+
+func _find_class_in(instance: RBXInstance, rbx_class: String) -> RBXInstance:
+	if instance.rbx_class == rbx_class:
+		return instance
+	for child: RBXInstance in instance.children:
+		var found := _find_class_in(child, rbx_class)
+		if found != null:
+			return found
+	return null
+
+
+func _find_by_id(node: Node, id: int) -> Node:
+	if node.has_meta("rbx_id") and int(node.get_meta("rbx_id")) == id:
+		return node
+	for child in node.get_children():
+		var found := _find_by_id(child, id)
 		if found != null:
 			return found
 	return null

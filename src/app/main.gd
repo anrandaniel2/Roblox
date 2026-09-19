@@ -24,6 +24,7 @@ var _log_view: RichTextLabel
 var _home_panel: PanelContainer
 var _demos_box: VBoxContainer
 var _recent_box: VBoxContainer
+var _place_view: RBXPlaceView
 
 
 func _ready() -> void:
@@ -70,6 +71,12 @@ func _build() -> void:
 	glow.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(glow)
 
+	# The viewport sits behind the panels so the imported place is always the
+	# backdrop; the panels themselves are what the player interacts with.
+	_place_view = RBXPlaceView.new()
+	_place_view.scene_built.connect(_on_scene_built)
+	add_child(_place_view)
+
 	var margin := MarginContainer.new()
 	margin.set_anchors_preset(Control.PRESET_FULL_RECT)
 	var pad := int(round(22.0 * _scale))
@@ -104,7 +111,15 @@ func _build_header() -> Control:
 	row.add_child(chip)
 	row.add_child(_spacer())
 
-	var log_button := _button("Log", false)
+	var open_button := _button("Open")
+	open_button.pressed.connect(func() -> void: RbxPlatform.pick_files())
+	row.add_child(open_button)
+
+	var home_button := _button("Library")
+	home_button.pressed.connect(func() -> void: _toggle_home())
+	row.add_child(home_button)
+
+	var log_button := _button("Log")
 	log_button.pressed.connect(func() -> void: _log_panel.visible = not _log_panel.visible)
 	row.add_child(log_button)
 
@@ -334,6 +349,7 @@ func _on_place_loaded(place: RBXPlace) -> void:
 		_human_size(place.file_size),
 	]
 	_set_status(RbxApp.describe_current())
+	_home_panel.visible = false
 	_refresh_lists()
 
 
@@ -347,7 +363,19 @@ func _on_place_failed(path: String, message: String) -> void:
 func _on_place_closed() -> void:
 	_place_label.text = "No place loaded"
 	_set_status("Place closed.")
+	_home_panel.visible = true
 	_refresh_lists()
+
+
+func _toggle_home() -> void:
+	_home_panel.visible = not _home_panel.visible
+
+
+func _on_scene_built(stats: Dictionary) -> void:
+	if stats.is_empty():
+		return
+	_set_status("%s · %d parts in the viewport" % [
+		RbxApp.describe_current(), int(stats.get("parts", 0))])
 
 
 func _on_busy_changed(busy: bool) -> void:
