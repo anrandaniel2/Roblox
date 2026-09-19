@@ -204,6 +204,22 @@ func read_i32_array(count: int) -> PackedInt64Array:
 	return out
 
 
+## `count` referents: transformed big endian 32 bit integers stored as deltas.
+##
+## The spec is explicit about this one — "when reading an array of Referent
+## values, they must be read accumulatively; the actual value is the read value
+## plus the preceding one" — and reading them as plain integers collapses most
+## of the file into a handful of referents, which is exactly what a 1001
+## instance fixture looked like (2 instances, 2 roots).
+func read_referent_array(count: int) -> PackedInt64Array:
+	var out := read_i32_array(count)
+	var total := 0
+	for index in out.size():
+		total += int(out[index])
+		out[index] = total
+	return out
+
+
 ## `count` raw (not transformed) big endian 32 bit integers.
 func read_u32_array(count: int) -> PackedInt64Array:
 	var out := PackedInt64Array()

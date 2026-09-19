@@ -190,7 +190,7 @@ func _read_instance_chunk(payload: PackedByteArray) -> void:
 	var rbx_class := reader.string_utf8()
 	var object_format := reader.u8()
 	var count := reader.u32_le()
-	var referents := reader.read_i32_array(count)
+	var referents := reader.read_referent_array(count)
 	if object_format == 1:
 		reader.skip(count) # service markers
 	var info := {"name": rbx_class, "referents": referents, "is_service": object_format == 1}
@@ -274,8 +274,8 @@ func _read_parent_chunk(payload: PackedByteArray) -> void:
 	if version != 0:
 		_place.add_warning("Unsupported parent chunk version %d." % version)
 	var count := reader.u32_le()
-	var children := reader.read_i32_array(count)
-	var parents := reader.read_i32_array(count)
+	var children := reader.read_referent_array(count)
+	var parents := reader.read_referent_array(count)
 	var linked := 0
 	for index in mini(children.size(), parents.size()):
 		var child: RBXInstance = _instances.get(children[index])
@@ -373,7 +373,7 @@ func _read_values(reader: RBXByteReader, type_id: int, count: int, _rbx_class: S
 			for value in reader.read_u32_array(count):
 				out.append(int(value))
 		0x13: # Referent
-			for value in reader.read_i32_array(count):
+			for value in reader.read_referent_array(count):
 				out.append(value)
 		0x14: # Vector3int16
 			var shorts := reader.read_i16_array(count * 3)
@@ -472,12 +472,12 @@ func _read_values(reader: RBXByteReader, type_id: int, count: int, _rbx_class: S
 				var object_count := reader.u32_le()
 				var object_value: Variant = null
 				if object_count > 0:
-					var refs := reader.read_i32_array(object_count)
+					var refs := reader.read_referent_array(object_count)
 					if refs.size() > 0:
 						object_value = _instances.get(refs[0])
 				var external_count := reader.u32_le()
 				if external_count > 0:
-					reader.read_i32_array(external_count)
+					reader.read_referent_array(external_count)
 				out.append({
 					"kinds": kinds,
 					"uri": uri,
