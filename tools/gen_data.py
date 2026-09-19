@@ -200,9 +200,28 @@ def build_brickcolors(path):
     return out
 
 
+def json_safe(value):
+    """Replaces non-finite floats so the JSON stays readable.
+
+    Godot's JSON parser rejects `Infinity`/`NaN` (Python happily writes both),
+    and a single one of them made the whole reflection database unreadable.
+    Roblox uses infinities for things like unbounded `NumberRange`s, where
+    `null` is at least an honest "no value".
+    """
+    if isinstance(value, float):
+        if value != value or value in (float("inf"), float("-inf")):
+            return None
+        return value
+    if isinstance(value, dict):
+        return {key: json_safe(item) for key, item in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [json_safe(item) for item in value]
+    return value
+
+
 def write_gz(path: str, payload) -> None:
     os.makedirs(os.path.dirname(path), exist_ok=True)
-    raw = json.dumps(payload, separators=(",", ":"), sort_keys=True).encode("utf-8")
+    raw = json.dumps(json_safe(payload), separators=(",", ":"), sort_keys=True).encode("utf-8")
     with gzip.GzipFile(filename="", mode="wb", fileobj=open(path, "wb"), compresslevel=9, mtime=0) as handle:
         handle.write(raw)
     print(

@@ -13,9 +13,13 @@ extends RefCounted
 ## Reference: https://github.com/rojo-rbx/rbx-dom/blob/master/docs/binary.md
 
 const MAGIC := "roblox!" ## preceded by a `<`
-const SIGNATURE := PackedByteArray([0x89, 0xFF, 0x0D, 0x0A, 0x1A, 0x0A])
-const ZSTD_MAGIC := PackedByteArray([0x28, 0xB5, 0x2F, 0xFD])
 const END_MAGIC := "</roblox>"
+
+## The six bytes that follow `<roblox!`.  A `static var` rather than a `const`
+## because Godot 4.7 no longer folds packed array constructors into constants
+## ("Assigned value for constant \"SIGNATURE\" isn't a constant expression"),
+## which took the whole reader — and everything that loads a file — down.
+static var SIGNATURE := PackedByteArray([0x89, 0xFF, 0x0D, 0x0A, 0x1A, 0x0A])
 
 ## Rotation matrices for the 24 "basic rotation" CFrame ids.  Columns are stored
 ## in the same order Roblox's `Matrix3::new(x, y, z)` uses.

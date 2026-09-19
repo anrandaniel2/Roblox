@@ -339,8 +339,26 @@ BASIC_ROTATIONS = {
 
 
 def transform32(value: int) -> int:
-    value &= 0xFFFFFFFF
+    """Zigzag: 0, -1, 1, -2, 2 ... -> 0, 1, 2, 3, 4 ...
+
+    The value has to stay signed: pre-masking it to 32 bits turns -1 into
+    0xFFFFFFFF, which decodes back as -2147483648 and breaks every reference.
+    """
     return ((value << 1) ^ (value >> 31)) & 0xFFFFFFFF
+
+
+def delta_referents(values: list[int]) -> bytes:
+    """Encodes a referent array the way the format wants it.
+
+    Readers accumulate referents ("the actual value is the read value plus the
+    preceding one"), so a writer has to store differences.
+    """
+    payload = bytearray()
+    previous = 0
+    for value in values:
+        payload += struct.pack(">I", transform32(value - previous))
+        previous = value
+    return bytes(payload)
 
 
 def transform64(value: int) -> int:
@@ -450,12 +468,11 @@ def encode_values(items: list[Item], prop_name: str, tagged: Tagged) -> tuple[in
                 position_payload += struct.pack(">I", roblox_float_bits(value_for(item, prop_name)[0][axis]))
         return 0x10, bytes(rotation_payload) + _columns_multiplex(position_payload, count, 4, 3)
     if type_name == "Ref":
-        payload = bytearray()
+        referents = []
         for item in items:
             target = value_for(item, prop_name)
-            referent = -1 if target is None else target.referent
-            payload += struct.pack(">I", transform32(referent))
-        return 0x13, _columns(payload, count, 4)
+            referents.append(-1 if target is None else target.referent)
+        return 0x13, _columns(delta_referents(referents), count, 4)
     if type_name == "UDim":
         scale_bytes = bytearray()
         offset_bytes = bytearray()
@@ -707,10 +724,7 @@ def build_binary(roots: list[Item], compression: str = "lz4") -> bytes:
         payload += struct.pack("<I", len(encoded)) + encoded
         payload += bytes([0])
         payload += struct.pack("<I", len(items))
-        referent_bytes = bytearray()
-        for item in items:
-            referent_bytes += struct.pack(">I", transform32(item.referent))
-        payload += _columns(referent_bytes, len(items), 4)
+        payload += _columns(delta_referents([item.referent for item in items]), len(items), 4)
         chunks.append(frame(b"INST", bytes(payload), compression))
 
         property_names: list[str] = []
@@ -733,14 +747,13 @@ def build_binary(roots: list[Item], compression: str = "lz4") -> bytes:
     parent_payload = bytearray()
     parent_payload += bytes([0])
     parent_payload += struct.pack("<I", len(ordered))
-    children_bytes = bytearray()
-    parents_bytes = bytearray()
+    children = [item.referent for item in ordered]
+    parents = []
     for item in ordered:
-        children_bytes += struct.pack(">I", transform32(item.referent))
         parent = find_parent(roots, item)
-        parents_bytes += struct.pack(">I", transform32(-1 if parent is None else parent.referent))
-    parent_payload += _columns(children_bytes, len(ordered), 4)
-    parent_payload += _columns(parents_bytes, len(ordered), 4)
+        parents.append(-1 if parent is None else parent.referent)
+    parent_payload += _columns(delta_referents(children), len(ordered), 4)
+    parent_payload += _columns(delta_referents(parents), len(ordered), 4)
     chunks.append(frame(b"PRNT", bytes(parent_payload), compression))
 
     meta_payload = bytearray()

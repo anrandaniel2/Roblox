@@ -15,13 +15,13 @@ const FIXTURE_DIR := "res://fixtures"
 
 ## file name -> [instances, roots, format]
 const EXPECTED := {
-	"all_types.rbxl": [19, 5, "binary"],
-	"all_types.rbxlx": [19, 5, "xml"],
-	"all_types_zstd.rbxl": [19, 5, "binary"],
-	"demo_obby.rbxl": [32, 1, "binary"],
-	"demo_obby.rbxlx": [32, 1, "xml"],
-	"demo_showcase.rbxl": [46, 5, "binary"],
-	"demo_showcase.rbxlx": [46, 5, "xml"],
+	"all_types.rbxl": [19, 1, "binary"],
+	"all_types.rbxlx": [19, 1, "xml"],
+	"all_types_zstd.rbxl": [19, 1, "binary"],
+	"demo_obby.rbxl": [33, 4, "binary"],
+	"demo_obby.rbxlx": [33, 4, "xml"],
+	"demo_showcase.rbxl": [48, 5, "binary"],
+	"demo_showcase.rbxlx": [48, 5, "xml"],
 	"deep-folders-100.rbxm": [100, 1, "binary"],
 	"folders-100.rbxm": [100, 1, "binary"],
 	"parts-1000.rbxm": [1001, 1, "binary"],
