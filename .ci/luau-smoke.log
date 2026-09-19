@@ -1,9 +1,9 @@
 4.7.2.stable.official.ed1daf0bf
-total 4224
-drwxr-xr-x 2 runner runner    4096 Sep 19 18:21 .
-drwxr-xr-x 4 runner runner    4096 Sep 19 18:21 ..
--rw-r--r-- 1 runner runner 2084600 Sep 19 18:21 libluau_vm.linux.template_debug.x86_64.so
--rw-r--r-- 1 runner runner 2231856 Sep 19 18:21 libluau_vm.linux.template_release.x86_64.so
+total 4228
+drwxr-xr-x 2 runner runner    4096 Sep 19 18:37 .
+drwxr-xr-x 4 runner runner    4096 Sep 19 18:37 ..
+-rw-r--r-- 1 runner runner 2088696 Sep 19 18:37 libluau_vm.linux.template_debug.x86_64.so
+-rw-r--r-- 1 runner runner 2231856 Sep 19 18:37 libluau_vm.linux.template_release.x86_64.so
 Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 
 [   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
@@ -19,38 +19,39 @@ Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpect
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
-SCRIPT ERROR: Parse Error: The method "to_string()" overrides a method from native class "Object". This won't be called by the engine and may not work as expected. (Warning treated as error.)
-          at: GDScript::reload (res://src/rbx/instance.gd:347)
-SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
-          at: GDScript::reload (res://src/rbx/place.gd:0)
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
-SCRIPT ERROR: Parse Error: Identifier "Compression" not declared in the current scope.
-          at: GDScript::reload (res://src/rbx/file_loader.gd:58)
-SCRIPT ERROR: Parse Error: Identifier "Compression" not declared in the current scope.
-          at: GDScript::reload (res://src/rbx/file_loader.gd:58)
-SCRIPT ERROR: Parse Error: Cannot infer the type of "decompressed" variable because the value doesn't have a set type.
-          at: GDScript::reload (res://src/rbx/file_loader.gd:58)
-SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
-          at: GDScript::reload (res://src/core/rbx_app.gd:0)
-ERROR: Failed to load script "res://src/core/rbx_app.gd" with error "Parse error".
-   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
 [  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
 [  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
 [92m[ DONE ][39m [1mfirst_scan_filesystem[22m
 [0m
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
-SCRIPT ERROR: Parse Error: The method "to_string()" overrides a method from native class "Object". This won't be called by the engine and may not work as expected. (Warning treated as error.)
-          at: GDScript::reload (res://src/rbx/instance.gd:347)
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
-SCRIPT ERROR: Parse Error: Identifier "Compression" not declared in the current scope.
-          at: GDScript::reload (res://src/rbx/file_loader.gd:58)
-SCRIPT ERROR: Parse Error: Identifier "Compression" not declared in the current scope.
-          at: GDScript::reload (res://src/rbx/file_loader.gd:58)
-SCRIPT ERROR: Parse Error: Cannot infer the type of "decompressed" variable because the value doesn't have a set type.
-          at: GDScript::reload (res://src/rbx/file_loader.gd:58)
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
    at: hex_to_int (core/string/ustring.cpp:2216)
@@ -58,26 +59,36 @@ Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpect
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
-[   0% ] [90m[1mupdate_scripts_classes[22m | Started Registering global classes... (19 steps)[39m[0m
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started Registering global classes... (23 steps)[39m[0m
 [   0% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
-[   5% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
-[  10% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
-[  15% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   4% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   8% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  12% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  16% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
 [  20% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
 [  25% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
-[  30% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
-[  35% ] [90m[1mupdate_scripts_classes[22m | RBXSceneBuilder[39m[0m
-[  40% ] [90m[1mupdate_scripts_classes[22m | RBXBinaryReader[39m[0m
+[  29% ] [90m[1mupdate_scripts_classes[22m | RBXSceneBuilder[39m[0m
+[  33% ] [90m[1mupdate_scripts_classes[22m | RBXScriptAPI[39m[0m
+[  37% ] [90m[1mupdate_scripts_classes[22m | RBXScriptRuntime[39m[0m
+[  41% ] [90m[1mupdate_scripts_classes[22m | RBXBinaryReader[39m[0m
 [  45% ] [90m[1mupdate_scripts_classes[22m | RBXByteReader[39m[0m
 [  50% ] [90m[1mupdate_scripts_classes[22m | RBXValues[39m[0m
-[  55% ] [90m[1mupdate_scripts_classes[22m | RBXFileLoader[39m[0m
-[  60% ] [90m[1mupdate_scripts_classes[22m | RBXInstance[39m[0m
-[  65% ] [90m[1mupdate_scripts_classes[22m | RBXLZ4[39m[0m
-[  70% ] [90m[1mupdate_scripts_classes[22m | RBXPlace[39m[0m
-[  75% ] [90m[1mupdate_scripts_classes[22m | RBXXmlReader[39m[0m
-[  80% ] [90m[1mupdate_scripts_classes[22m | RBXPlaceView[39m[0m
-[  85% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
-[  90% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  54% ] [90m[1mupdate_scripts_classes[22m | RBXFileLoader[39m[0m
+[  58% ] [90m[1mupdate_scripts_classes[22m | RBXInstance[39m[0m
+[  62% ] [90m[1mupdate_scripts_classes[22m | RBXLZ4[39m[0m
+[  66% ] [90m[1mupdate_scripts_classes[22m | RBXPlace[39m[0m
+[  70% ] [90m[1mupdate_scripts_classes[22m | RBXXmlReader[39m[0m
+[  75% ] [90m[1mupdate_scripts_classes[22m | RBXZstd[39m[0m
+[  79% ] [90m[1mupdate_scripts_classes[22m | RBXPlaceView[39m[0m
+[  83% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  87% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  91% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
 [92m[ DONE ][39m [1mupdate_scripts_classes[22m
 [0m
 [   0% ] [90m[1mreimport[22m | Started (Re)Importing Assets (1 steps)[39m[0m
@@ -96,16 +107,6 @@ Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpect
 [  16% ] [90m[1mloading_editor_layout[22m | Loading docks...[39m[0m
 [92m[ DONE ][39m [1mloading_editor_layout[22m
 [0m
-SCRIPT ERROR: Parse Error: Cannot infer the type of "simulate" variable because the value doesn't have a set type.
-          at: GDScript::reload (res://src/importer/scene_builder.gd:138)
-SCRIPT ERROR: Parse Error: Static function "brick_color_color()" not found in base "RBXValues".
-          at: GDScript::reload (res://src/importer/scene_builder.gd:341)
-SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
-          at: GDScript::reload (res://src/ui/place_view.gd:0)
-SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
-          at: GDScript::reload (res://src/app/main.gd:0)
-ERROR: Failed to load script "res://src/app/main.gd" with error "Parse error".
-   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
 Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
@@ -116,21 +117,21 @@ Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpect
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
-SCRIPT ERROR: Parse Error: The method "to_string()" overrides a method from native class "Object". This won't be called by the engine and may not work as expected. (Warning treated as error.)
-          at: GDScript::reload (res://src/rbx/instance.gd:347)
-SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
-          at: GDScript::reload (res://src/rbx/place.gd:0)
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
-SCRIPT ERROR: Parse Error: Identifier "Compression" not declared in the current scope.
-          at: GDScript::reload (res://src/rbx/file_loader.gd:58)
-SCRIPT ERROR: Parse Error: Identifier "Compression" not declared in the current scope.
-          at: GDScript::reload (res://src/rbx/file_loader.gd:58)
-SCRIPT ERROR: Parse Error: Cannot infer the type of "decompressed" variable because the value doesn't have a set type.
-          at: GDScript::reload (res://src/rbx/file_loader.gd:58)
-SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
-          at: GDScript::reload (res://src/core/rbx_app.gd:0)
-ERROR: Failed to load script "res://src/core/rbx_app.gd" with error "Compilation failed".
-   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
 --- luau_vm smoke test ---
 Godot 4.7.2-stable (official)
   ok    a fresh state is valid
@@ -159,7 +160,69 @@ Godot 4.7.2-stable (official)
   ok    host-injected globals still work while sandboxed
   ok    globals injected before the sandbox are still readable
 --- luau_vm smoke test passed ---
-[18:21:59] INFO  app: Rbx Engine 1.0.0 on Linux.
-[18:21:59] INFO  app: Input: mouse + keyboard. Quality: HIGH.
+[18:37:22] INFO  app: Rbx Engine 1.0.0 on Linux.
+[18:37:22] INFO  app: Input: mouse + keyboard. Quality: HIGH.
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 
---- Luau extension / smoke-linux / run 35460347121 / status success / 2026-09-19T18:21:59Z ---
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
+[18:37:23] INFO  app: Rbx Engine 1.0.0 on Linux.
+[18:37:23] INFO  app: Input: mouse + keyboard. Quality: HIGH.
+--- roblox api smoke test ---
+Godot 4.7.2-stable (official)
+[18:37:23] INFO  data: Loaded 892 classes, 596 enums, 208 BrickColors.
+[18:37:23] INFO  script: Roblox API installed into the Luau state.
+[18:37:23] INFO  script: Luau runtime ready: 0 script(s) ran.
+  ok   the Luau runtime started
+[18:37:23] ERROR script: @api_test: api_test:3: attempt to index nil with 'new'
+[18:37:23] DEBUG script: @api_test traceback:
+api_test:3: attempt to index nil with 'new'
+  FAIL the API script ran: 
+  FAIL the script did not leave a result table (got <null>)
+  FAIL Instance.new added the part to the data model
+  FAIL the folder was parented too
+  FAIL the imported scene sees the new part
+[18:37:23] ERROR script: @broken: broken:1: script blew up
+[18:37:23] DEBUG script: @broken traceback:
+broken:1: script blew up
+  ok   a failing script reports failure
+  ok   the runtime keeps working after an error
+  ok   state survives a failed script
+  ok   the instance methods ran: 
+  FAIL GetChildren() lists the new instances
+  FAIL FindFirstChild() finds by name
+  FAIL GetDescendants() walks the tree
+  FAIL IsA() consults the reflection database
+LUA_API_SMOKE FAIL checks=13 failures=9
+  - the API script ran: 
+  - the script did not leave a result table (got <null>)
+  - Instance.new added the part to the data model
+  - the folder was parented too
+  - the imported scene sees the new part
+  - GetChildren() lists the new instances
+  - FindFirstChild() finds by name
+  - GetDescendants() walks the tree
+  - IsA() consults the reflection database
+
+--- Luau extension / smoke-linux / run 35461213210 / status failure / 2026-09-19T18:37:23Z ---
