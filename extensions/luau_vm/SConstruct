@@ -13,6 +13,14 @@ import os
 
 env = SConscript("extern/godot-cpp/SConstruct")
 
+# Luau signals parse and compile errors by throwing C++ exceptions, and
+# godot-cpp compiles with exceptions disabled. Re-enable them for this target;
+# the flag is appended after godot-cpp's own, and the last one wins.
+if env["platform"] == "windows":
+	env.Append(CCFLAGS=["/EHsc"], CXXFLAGS=["/EHsc"])
+else:
+	env.Append(CCFLAGS=["-fexceptions"], CXXFLAGS=["-fexceptions"])
+
 luau_root = os.path.join("extern", "luau")
 
 # headers: Common (spans), Ast, Compiler (luau_compile) and the VM itself.
