@@ -1,0 +1,30 @@
+name: Smoke
+on:
+  push:
+    branches: [arena/01a0ba62-roblox]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe environment
+        run: |
+          mkdir -p .ci
+          {
+            echo "runner: $(uname -a)"
+            echo "cores: $(nproc)"
+            echo "disk:"; df -h /
+          } > .ci/smoke.txt 2>&1
+          curl -sL -o /tmp/godot.zip https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip || echo "download failed" >> .ci/smoke.txt
+          ls -la /tmp/godot.zip >> .ci/smoke.txt 2>&1
+          unzip -o /tmp/godot.zip -d /tmp/godot >> .ci/smoke.txt 2>&1 && chmod +x /tmp/godot/* && /tmp/godot/Godot_v4.7.2-stable_linux.x86_64 --version >> .ci/smoke.txt 2>&1
+      - name: Commit results
+        run: |
+          git config user.email "ci@arena.ai"
+          git config user.name "arena-ci"
+          git add .ci/smoke.txt
+          git commit -m "ci: smoke results [skip ci]" || echo "nothing to commit"
+          git push || echo "push failed"
