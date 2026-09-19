@@ -178,7 +178,7 @@ func delete_library_file(path: String) -> bool:
 ## hands the bytes of the picked file straight back.
 func pick_files(file_name: String = "Places", extensions: PackedStringArray = PackedStringArray(["rbxl", "rbxlx", "rbxm", "rbxmx"])) -> void:
 	if is_web() and _web_bridge != null:
-		_web_bridge.pick_files(extensions, func(file_name_selected: String, bytes: PackedByteArray) -> void:
+		_web_bridge.call("pick_files", extensions, func(file_name_selected: String, bytes: PackedByteArray) -> void:
 			var target := write_library_file(file_name_selected.get_file(), bytes)
 			if not target.is_empty():
 				files_selected.emit(PackedStringArray([target]))
@@ -189,7 +189,7 @@ func pick_files(file_name: String = "Places", extensions: PackedStringArray = Pa
 		_dialog.access = FileDialog.ACCESS_FILESYSTEM
 		_dialog.file_mode = FileDialog.FILE_MODE_OPEN_FILE
 		_dialog.use_native_dialog = supports_native_dialogs()
-		_dialog.title = "Open a Roblox place or model"
+		_dialog.title = "Open %s" % file_name
 		_dialog.add_filter("*.rbxl,*.rbxlx,*.rbxm,*.rbxmx", "Roblox place / model")
 		_dialog.add_filter("*.*", "All files")
 		_dialog.size = Vector2i(900, 620)
@@ -212,7 +212,7 @@ func show_message(message: String, title: String = "Rbx Engine") -> void:
 ## Nudge the browser to open `url` (used by the "help" buttons).
 func open_url(url: String) -> void:
 	if is_web() and _web_bridge != null:
-		_web_bridge.open_url(url)
+		_web_bridge.call("open_url", url)
 		return
 	OS.shell_open(url)
 

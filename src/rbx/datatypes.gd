@@ -203,7 +203,7 @@ static func faces_from_mask(mask: int) -> PackedStringArray:
 	var out := PackedStringArray()
 	for index in FACES.size():
 		if mask & (1 << index):
-			out.append(FACES[index])
+			out.append(String(FACES[index]))
 	return out
 
 
@@ -211,7 +211,7 @@ static func axes_from_mask(mask: int) -> PackedStringArray:
 	var out := PackedStringArray()
 	for index in AXES.size():
 		if mask & (1 << index):
-			out.append(AXES[index])
+			out.append(String(AXES[index]))
 	return out
 
 

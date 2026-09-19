@@ -1,0 +1,14 @@
+[gd_resource type="Environment" format=3]
+
+; Default world environment used until a place brings its own Lighting settings.
+; Kept deliberately simple: a flat clear colour plus a soft ambient fill, which
+; is what an unlit Roblox place looks like before its atmosphere is applied.
+
+[resource]
+background_mode = 1
+background_color = Color(0.043, 0.055, 0.078, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.45, 0.48, 0.56, 1)
+ambient_light_energy = 0.7
+tonemap_mode = 3
+fog_enabled = false

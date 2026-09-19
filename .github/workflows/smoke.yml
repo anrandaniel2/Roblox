@@ -1,30 +1,73 @@
 name: Smoke
+
 on:
   push:
     branches: [arena/01a0ba62-roblox]
   workflow_dispatch:
+
 permissions:
   contents: write
+
 jobs:
-  smoke:
+  core:
+    name: Core (parsers on Godot 4.7.2)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Probe environment
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install the reference reader's dependencies
         run: |
           mkdir -p .ci
-          {
-            echo "runner: $(uname -a)"
-            echo "cores: $(nproc)"
-            echo "disk:"; df -h /
-          } > .ci/smoke.txt 2>&1
-          curl -sL -o /tmp/godot.zip https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip || echo "download failed" >> .ci/smoke.txt
-          ls -la /tmp/godot.zip >> .ci/smoke.txt 2>&1
-          unzip -o /tmp/godot.zip -d /tmp/godot >> .ci/smoke.txt 2>&1 && chmod +x /tmp/godot/* && /tmp/godot/Godot_v4.7.2-stable_linux.x86_64 --version >> .ci/smoke.txt 2>&1
-      - name: Commit results
+          python3 -m pip install --quiet zstandard 2>&1 | tee .ci/smoke.txt
+
+      - name: Install Godot 4.7.2
         run: |
+          {
+            curl -sSL -o /tmp/godot.zip https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip
+            unzip -q -o /tmp/godot.zip -d /tmp/godot
+            chmod +x /tmp/godot/Godot_v4.7.2-stable_linux.x86_64
+            /tmp/godot/Godot_v4.7.2-stable_linux.x86_64 --version
+          } 2>&1 | tee -a .ci/smoke.txt
+
+      - name: Import project resources
+        run: |
+          /tmp/godot/Godot_v4.7.2-stable_linux.x86_64 --headless --path . --import \
+            2>&1 | tee -a .ci/smoke.txt || true
+
+      - name: Boot the app shell
+        run: |
+          # Proves the autoload chain, the theme and the main scene all come up
+          # on a real build. Informational: the parser test below is the gate.
+          /tmp/godot/Godot_v4.7.2-stable_linux.x86_64 --headless --path . --quit-after 120 \
+            2>&1 | tee -a .ci/smoke.txt || echo "the app shell did not boot cleanly" | tee -a .ci/smoke.txt
+
+      - name: Run the core smoke test
+        run: |
+          set -o pipefail
+          /tmp/godot/Godot_v4.7.2-stable_linux.x86_64 --headless --path . res://tests/core_smoke.tscn \
+            2>&1 | tee -a .ci/smoke.txt
+
+      - name: Cross-check the readers against the reference reader
+        run: |
+          set -o pipefail
+          python3 tools/check_parsers.py --log .ci/smoke.txt --fixtures fixtures \
+            2>&1 | tee -a .ci/smoke.txt
+
+      - name: Commit results
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          {
+            echo ""
+            echo "--- Smoke / core / run ${GITHUB_RUN_ID} / status ${JOB_STATUS} / $(date -u +%Y-%m-%dT%H:%M:%SZ) ---"
+          } >> .ci/smoke.txt
           git config user.email "ci@arena.ai"
           git config user.name "arena-ci"
-          git add .ci/smoke.txt
+          git add -f .ci/smoke.txt
           git commit -m "ci: smoke results [skip ci]" || echo "nothing to commit"
           git push || echo "push failed"

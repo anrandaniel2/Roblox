@@ -160,7 +160,7 @@ func remove_child(child: RBXInstance) -> void:
 
 
 func clear_children() -> void:
-	for child in children.duplicate():
+	for child: RBXInstance in children.duplicate():
 		remove_child(child)
 
 

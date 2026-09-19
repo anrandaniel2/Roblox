@@ -65,7 +65,7 @@ func _test_values(vm: Variant) -> void:
 	if payload is Dictionary:
 		_check(payload.get("name", "") == "part", "strings survive the round trip")
 		var size: Variant = payload.get("size", null)
-		_check(size is Dictionary and is_equal_approx(size.get("x", 0.0), 4.0), "Vector3 becomes a table with x/y/z")
+		_check(size is Dictionary and is_equal_approx(float(size.get("x", 0.0)), 4.0), "Vector3 becomes a table with x/y/z")
 	else:
 		_fail("expected a Dictionary back from Luau, got %s" % str(payload))
 
@@ -113,7 +113,7 @@ func _test_sandbox(vm: Variant) -> void:
 	_check(vm.get_global("before_sandbox") == 1, "globals injected before the sandbox are still readable")
 
 
-func _check(condition: bool, description: String) -> void:
+func _check(condition: Variant, description: String) -> void:
 	if condition:
 		print("  ok    %s" % description)
 	else:

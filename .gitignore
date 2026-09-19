@@ -17,4 +17,7 @@ node_modules/
 # Luau GDExtension: fetched dependencies and build output
 extensions/luau_vm/extern/
 extensions/luau_vm/bin/
+extensions/luau_vm/**/*.os
+extensions/luau_vm/**/*.o
+extensions/luau_vm/**/*.dblite
 .sconsign.dblite

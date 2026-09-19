@@ -124,7 +124,7 @@ func renderable_count() -> int:
 
 func _count_renderable(instance: RBXInstance) -> int:
 	var total := 1 if _is_renderable(instance) else 0
-	for child in instance.children:
+	for child: RBXInstance in instance.children:
 		total += _count_renderable(child)
 	return total
 

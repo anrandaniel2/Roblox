@@ -322,6 +322,13 @@ Variant LuauVMState::_read_table(int p_index) {
 	// a relative one would point at the iteration key instead of the table.
 	const int index = _absolute_index(state, p_index);
 
+	// `lua_next` and `lua_rawgeti` raise an *unprotected* error when they are
+	// handed something that is not a table, and an unprotected error inside a
+	// GDExtension callback has no handler to unwind to. Check first.
+	if (lua_type(state, index) != LUA_TTABLE) {
+		return Variant();
+	}
+
 	// Arrays are the common case: probe 1..n, and if the table holds nothing
 	// else it becomes a Godot Array, otherwise a Dictionary.
 	int array_length = 0;
