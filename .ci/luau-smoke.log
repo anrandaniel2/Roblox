@@ -1,9 +1,9 @@
 4.7.2.stable.official.ed1daf0bf
 total 4224
-drwxr-xr-x 2 runner runner    4096 Sep 19 17:44 .
-drwxr-xr-x 4 runner runner    4096 Sep 19 17:44 ..
--rw-r--r-- 1 runner runner 2084600 Sep 19 17:44 libluau_vm.linux.template_debug.x86_64.so
--rw-r--r-- 1 runner runner 2231856 Sep 19 17:44 libluau_vm.linux.template_release.x86_64.so
+drwxr-xr-x 2 runner runner    4096 Sep 19 18:00 .
+drwxr-xr-x 4 runner runner    4096 Sep 19 18:00 ..
+-rw-r--r-- 1 runner runner 2084600 Sep 19 18:00 libluau_vm.linux.template_debug.x86_64.so
+-rw-r--r-- 1 runner runner 2231856 Sep 19 18:00 libluau_vm.linux.template_release.x86_64.so
 Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 
 ERROR: Cannot open file 'res://data/default_environment.tres'.
@@ -100,43 +100,29 @@ ERROR: Failed to instantiate an autoload, can't load from path: res://src/core/r
 Godot 4.7.2-stable (official)
   ok    a fresh state is valid
   ok    Luau syntax compiles and runs: 
+  ok    compound assignment + continue gave 25 (got 25.0)
+  ok    backtick interpolation produced 'odd total = 25'
+  ok    strings survive the round trip
+  ok    Vector3 becomes a table with x/y/z
+  ok    array literal runs
+  ok    sequential tables come back as 1-based Arrays
+  ok    the Luau allocator reports memory use
+  ok    call_global returns every value
+  ok    arguments crossed into Luau and back (2 + 3 = 5.0)
+  ok    multiple return values are preserved
+  ok    a failing chunk reports failure
+  ok    the failure is queryable
+  ok    the error message is preserved: [string "broken"]:1: this chunk is broken
+  ok    a traceback was captured
+  ok    the state still runs chunks after an error
+  ok    the state kept working after the error
+  ok    a syntax error is reported, not fatal
+  ok    the syntax error was captured
+  ok    sandbox() reports the state as sandboxed
+  ok    writing a new global inside a sandbox fails
+    sandbox refused: [string "escape"]:1: attempt to modify a readonly table
+  ok    host-injected globals still work while sandboxed
+  ok    globals injected before the sandbox are still readable
+--- luau_vm smoke test passed ---
 
-================================================================
-handle_crash: Program crashed with signal 11
-Engine version: Godot Engine v4.7.2.stable.official (ed1daf0bf001b61586d9930840f2f1394092c079)
-Dumping the backtrace. Please include this when reporting the bug on: https://github.com/godotengine/godot/issues
-Load address: 400000
-
-[1] 7fcab3c45330 (libc.so.6+45330) - /lib/x86_64-linux-gnu/libc.so.6(+0x45330) [0x7fcab3c45330]
-[2] 7fcab030ac86 (libluau_vm.linux.template_debug.x86_64.so+10ac86) - /home/runner/work/Roblox/Roblox/extensions/luau_vm/bin/libluau_vm.linux.template_debug.x86_64.so(+0x10ac86) [0x7fcab030ac86]
-[3] 7fcab02ec34e (libluau_vm.linux.template_debug.x86_64.so+ec34e) - /home/runner/work/Roblox/Roblox/extensions/luau_vm/bin/libluau_vm.linux.template_debug.x86_64.so(+0xec34e) [0x7fcab02ec34e]
-[4] 7fcab0246c05 (libluau_vm.linux.template_debug.x86_64.so+46c05) - /home/runner/work/Roblox/Roblox/extensions/luau_vm/bin/libluau_vm.linux.template_debug.x86_64.so(+0x46c05) [0x7fcab0246c05]
-[5] 7fcab0246e43 (libluau_vm.linux.template_debug.x86_64.so+46e43) - /home/runner/work/Roblox/Roblox/extensions/luau_vm/bin/libluau_vm.linux.template_debug.x86_64.so(+0x46e43) [0x7fcab0246e43]
-[6] 7fcab024727c (libluau_vm.linux.template_debug.x86_64.so+4727c) - /home/runner/work/Roblox/Roblox/extensions/luau_vm/bin/libluau_vm.linux.template_debug.x86_64.so(+0x4727c) [0x7fcab024727c]
-[7] 7fcab024bcc2 (libluau_vm.linux.template_debug.x86_64.so+4bcc2) - /home/runner/work/Roblox/Roblox/extensions/luau_vm/bin/libluau_vm.linux.template_debug.x86_64.so(+0x4bcc2) [0x7fcab024bcc2]
-[8] 7fcab024be7e (libluau_vm.linux.template_debug.x86_64.so+4be7e) - /home/runner/work/Roblox/Roblox/extensions/luau_vm/bin/libluau_vm.linux.template_debug.x86_64.so(+0x4be7e) [0x7fcab024be7e]
-[9] 7fcab032e909 (libluau_vm.linux.template_debug.x86_64.so+12e909) - /home/runner/work/Roblox/Roblox/extensions/luau_vm/bin/libluau_vm.linux.template_debug.x86_64.so(+0x12e909) [0x7fcab032e909]
-[10] 48383be (main+44383be) - /tmp/godot/Godot_v4.7.2-stable_linux.x86_64() [0x48383be]
-[11] 48f714b (main+44f714b) - /tmp/godot/Godot_v4.7.2-stable_linux.x86_64() [0x48f714b]
-[12] 46ada1b (main+42ada1b) - /tmp/godot/Godot_v4.7.2-stable_linux.x86_64() [0x46ada1b]
-[13] af6c08 (main+6f6c08) - /tmp/godot/Godot_v4.7.2-stable_linux.x86_64() [0xaf6c08]
-[14] 9380de (main+5380de) - /tmp/godot/Godot_v4.7.2-stable_linux.x86_64() [0x9380de]
-[15] 48f70b5 (main+44f70b5) - /tmp/godot/Godot_v4.7.2-stable_linux.x86_64() [0x48f70b5]
-[16] 46ada1b (main+42ada1b) - /tmp/godot/Godot_v4.7.2-stable_linux.x86_64() [0x46ada1b]
-[17] b1c5b8 (main+71c5b8) - /tmp/godot/Godot_v4.7.2-stable_linux.x86_64() [0xb1c5b8]
-[18] 9380de (main+5380de) - /tmp/godot/Godot_v4.7.2-stable_linux.x86_64() [0x9380de]
-[19] 4438ece (main+4038ece) - /tmp/godot/Godot_v4.7.2-stable_linux.x86_64() [0x4438ece]
-[20] 2ae5223 (main+26e5223) - /tmp/godot/Godot_v4.7.2-stable_linux.x86_64() [0x2ae5223]
-[21] 42c127 (main+2c127) - /tmp/godot/Godot_v4.7.2-stable_linux.x86_64() [0x42c127]
-[22] 7fcab3c2a1ca (libc.so.6+2a1ca) - /lib/x86_64-linux-gnu/libc.so.6(+0x2a1ca) [0x7fcab3c2a1ca]
-[23] 7fcab3c2a28b (libc.so.6+2a28b) - /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x8b) [0x7fcab3c2a28b]
-[24] 48a6da (main+8a6da) - /tmp/godot/Godot_v4.7.2-stable_linux.x86_64() [0x48a6da]
--- END OF C++ BACKTRACE --
-================================================================
-GDScript backtrace (most recent call first):
-    [0] _test_luau_syntax (res://tests/luau_smoke.gd:54)
-    [1] _initialize (res://tests/luau_smoke.gd:32)
--- END OF GDSCRIPT BACKTRACE --
-================================================================
-
---- Luau extension / smoke-linux / run 35458677833 / status failure / 2026-09-19T17:44:15Z ---
+--- Luau extension / smoke-linux / run 35459224726 / status success / 2026-09-19T18:00:15Z ---
