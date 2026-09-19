@@ -24,6 +24,14 @@ jobs:
           mkdir -p .ci
           python3 -m pip install --quiet zstandard 2>&1 | tee .ci/smoke.txt
 
+      - name: Check the sources against the Godot 4.7 API
+        run: |
+          # Catches scripts that call engine API which does not exist in 4.7
+          # (the `Compression` class went away, for one) without waiting for the
+          # engine to compile them a few minutes later.
+          set -o pipefail
+          python3 tools/check_native_api.py src tests 2>&1 | tee -a .ci/smoke.txt
+
       - name: Install Godot 4.7.2
         run: |
           {

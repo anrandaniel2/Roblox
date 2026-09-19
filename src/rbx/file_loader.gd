@@ -55,7 +55,7 @@ static func parse_bytes(bytes: PackedByteArray, display_name: String = "Untitled
 
 	var format := detect_format(bytes)
 	if format == "gzip":
-		var decompressed := Compression.decompress(bytes, Compression.MODE_GZIP)
+		var decompressed := bytes.decompress_dynamic(-1, FileAccess.COMPRESSION_GZIP)
 		if decompressed.is_empty():
 			place.load_error = "Could not decompress the gzip container."
 			return place

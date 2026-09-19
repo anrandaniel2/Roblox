@@ -301,20 +301,35 @@ func brick_color_name(number: int) -> String:
 
 
 func _read_json(path: String, fallback_path: String = "") -> Variant:
-	var text := ""
-	if FileAccess.file_exists(path):
-		var file := FileAccess.open_compressed(path, FileAccess.READ, FileAccess.COMPRESSION_GZIP)
-		if file != null:
-			text = file.get_as_text()
-		else:
-			RbxLog.warn("Could not open %s for reading." % path, "data")
-	if text.is_empty() and not fallback_path.is_empty() and FileAccess.file_exists(fallback_path):
-		var plain := FileAccess.open(fallback_path, FileAccess.READ)
-		if plain != null:
-			text = plain.get_as_text()
+	var text := _read_text(path)
+	if text.is_empty() and not fallback_path.is_empty():
+		text = _read_text(fallback_path)
 	if text.is_empty():
 		return null
 	var parsed: Variant = JSON.parse_string(text)
 	if parsed == null:
 		RbxLog.error("Failed to parse %s (invalid JSON)." % path, "data")
 	return parsed
+
+
+## Reads one of the generated tables, inflating it when it is gzip'd.
+##
+## `FileAccess.open_compressed()` is not an option here: it reads the engine's own
+## magic + block-table container, not a plain gzip stream like the one `gzip` or
+## `tools/gen_data.py` writes.  The bytes are inflated directly instead, and the
+## mode comes from `FileAccess` because Godot 4.7 dropped the `Compression` class.
+func _read_text(path: String) -> String:
+	if not FileAccess.file_exists(path):
+		RbxLog.warn("Could not open %s for reading." % path, "data")
+		return ""
+	var bytes := FileAccess.get_file_as_bytes(path)
+	if bytes.is_empty():
+		RbxLog.warn("Could not open %s for reading." % path, "data")
+		return ""
+	if bytes.size() >= 2 and bytes[0] == 0x1F and bytes[1] == 0x8B:
+		var plain := bytes.decompress_dynamic(-1, FileAccess.COMPRESSION_GZIP)
+		if plain.is_empty():
+			RbxLog.warn("Could not decompress %s." % path, "data")
+			return ""
+		return plain.get_string_from_utf8()
+	return bytes.get_string_from_utf8()

@@ -79,6 +79,7 @@ func is_running() -> bool:
 ## Runs one chunk in the place's context — used by the console and by tests.
 func run(source: String, chunk_name: String = "@console") -> bool:
 	if _vm == null or _api == null:
+		last_error = "The Luau runtime is not running."
 		return false
 	var ok: bool = _api.run(source, chunk_name)
 	script_finished.emit(chunk_name, ok)

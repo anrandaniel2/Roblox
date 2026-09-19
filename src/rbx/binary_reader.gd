@@ -130,14 +130,7 @@ func parse(bytes: PackedByteArray, place: RBXPlace) -> bool:
 func _decompress(body: PackedByteArray, expected: int) -> PackedByteArray:
 	if body.size() >= 4 and body[0] == 0x28 and body[1] == 0xB5 and body[2] == 0x2F and body[3] == 0xFD:
 		_chunk_stats["zstd"] += 1
-		var result := Compression.decompress(body, Compression.MODE_ZSTD)
-		if result.size() < expected and expected > 0:
-			# Godot's zstd path can short read on some frames; fall back to a
-			# frame header parse that knows the content size.
-			var fixed := Compression.decompress(body, Compression.MODE_ZSTD)
-			if fixed.size() > result.size():
-				result = fixed
-		return result
+		return RBXZstd.decompress(body, expected)
 	_chunk_stats["lz4"] += 1
 	return RBXLZ4.decompress(body, expected)
 

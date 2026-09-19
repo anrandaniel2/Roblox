@@ -37,6 +37,8 @@ const PART_CLASSES := [
 	"IntersectOperation", "NegateOperation", "PartOperation",
 ]
 const LIGHT_CLASSES := ["PointLight", "SpotLight", "SurfaceLight"]
+## Roblox's fallback colour for an unset BrickColor: "Medium stone grey" (194).
+const MEDIUM_STONE_GREY := Color(0.639216, 0.635294, 0.647059)
 const SKIP_CLASSES := [
 	"Script", "LocalScript", "ModuleScript", "RemoteEvent", "RemoteFunction",
 	"BindableEvent", "BindableFunction", "ScreenGui", "Frame", "TextLabel",
@@ -135,7 +137,7 @@ func _build_part(instance: RBXInstance) -> Node3D:
 	var size := _size_of(instance)
 	var transform := _transform_of(instance)
 	var anchored := bool(_property(instance, "Anchored", true))
-	var simulate := anchored or not _setting("simulate_unanchored", true)
+	var simulate: bool = anchored or not bool(_setting("simulate_unanchored", true))
 
 	if rbx_class_needs_mesh(instance):
 		_warn("Meshes are not fetched yet — '%s' is shown as a block." % instance.rbx_class)
@@ -338,7 +340,7 @@ func _color_of(instance: RBXInstance) -> Color:
 		return value
 	var brick: Variant = instance.get_property("BrickColor")
 	if brick is int:
-		return RBXValues.brick_color_color(brick) if brick > 0 else Color(0.64, 0.64, 0.64)
+		return RBXValues.BrickColorUtil.color_for(brick) if brick > 0 else MEDIUM_STONE_GREY
 	return Color(0.64, 0.64, 0.64)
 
 

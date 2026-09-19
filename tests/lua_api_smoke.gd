@@ -24,6 +24,11 @@ func _ready() -> void:
 		get_tree().quit(0)
 		return
 
+	# The sandbox freezes the global table once the place's own scripts have been
+	# collected, and these checks write globals from Luau to read them back.  The
+	# sandbox itself is covered by the extension smoke test.
+	RbxSettings.scripting_sandbox = false
+
 	var place := RBXPlace.new()
 	place.name = "api_test"
 

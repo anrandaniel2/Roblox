@@ -344,7 +344,9 @@ func add_warning(text: String) -> void:
 		warnings.append(text)
 
 
-func to_string() -> String:
+## Godot's `Object` already owns `to_string()`, so the string form is the
+## virtual `_to_string()` the engine calls from `str()`.
+func _to_string() -> String:
 	return "%s(%s)" % [rbx_class, get_name()]
 
 
