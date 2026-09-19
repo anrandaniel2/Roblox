@@ -164,8 +164,8 @@ Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpect
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
    at: hex_to_int (core/string/ustring.cpp:2216)
-[18:19:50] INFO  app: Rbx Engine 1.0.0 on Linux.
-[18:19:50] INFO  app: Input: mouse + keyboard. Quality: HIGH.
+[18:22:58] INFO  app: Rbx Engine 1.0.0 on Linux.
+[18:22:58] INFO  app: Input: mouse + keyboard. Quality: HIGH.
 ERROR: Can't open dynamic library, file not found: '/home/runner/work/Roblox/Roblox/extensions/luau_vm/bin/libluau_vm.linux.template_debug.x86_64.so'.
    at: open_dynamic_library (drivers/unix/os_unix.cpp:1063)
 ERROR: GDExtension dynamic library not found: 'res://extensions/luau_vm/luau_vm.gdextension'.
@@ -199,15 +199,15 @@ ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the
    at: hex_to_int (core/string/ustring.cpp:2216)
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
-[18:19:51] INFO  app: Rbx Engine 1.0.0 on Linux.
-[18:19:51] INFO  app: Input: mouse + keyboard. Quality: HIGH.
+[18:23:00] INFO  app: Rbx Engine 1.0.0 on Linux.
+[18:23:00] INFO  app: Input: mouse + keyboard. Quality: HIGH.
 --- core smoke test ---
 Godot 4.7.2-stable (official)
-[18:19:51] INFO  data: Loaded 892 classes, 596 enums, 208 BrickColors.
-[18:19:51] INFO  importer: Parsed all_types (binary) with 17 instances in 18 ms.
-FIXTURE file=all_types.rbxl format=binary instances=17 roots=15 props=41 classes=13 ms=18 warnings=0 error=-
-  FAIL all_types.rbxl has 17 instances (expected 19)
-  FAIL all_types.rbxl has 15 roots (expected 1)
+[18:23:00] INFO  data: Loaded 892 classes, 596 enums, 208 BrickColors.
+[18:23:00] INFO  importer: Parsed all_types (binary) with 19 instances in 14 ms.
+FIXTURE file=all_types.rbxl format=binary instances=19 roots=1 props=41 classes=15 ms=14 warnings=0 error=-
+  ok   all_types.rbxl has 19 instances (expected 19)
+  ok   all_types.rbxl has 1 roots (expected 1)
   ok   all_types.rbxl was read as binary (expected binary)
 ERROR: Condition "node_type != NODE_TEXT" is true. Returning: ""
    at: get_node_data (core/io/xml_parser.cpp:392)
@@ -218,67 +218,68 @@ ERROR: Condition "node_type != NODE_TEXT" is true. Returning: ""
        [3] load_file (res://src/rbx/file_loader.gd:42)
        [4] _check_fixture (res://tests/core_smoke.gd:77)
        [5] _ready (res://tests/core_smoke.gd:47)
-[18:19:51] INFO  importer: Parsed all_types (xml) with 19 instances in 2 ms.
-FIXTURE file=all_types.rbxlx format=xml instances=19 roots=1 props=-1 classes=15 ms=2 warnings=0 error=-
+[18:23:00] INFO  importer: Parsed all_types (xml) with 19 instances in 1 ms.
+FIXTURE file=all_types.rbxlx format=xml instances=19 roots=1 props=-1 classes=15 ms=1 warnings=0 error=-
   ok   all_types.rbxlx has 19 instances (expected 19)
   ok   all_types.rbxlx has 1 roots (expected 1)
   ok   all_types.rbxlx was read as xml (expected xml)
-[18:19:51] INFO  importer: Parsed all_types_zstd (binary) with 17 instances in 1 ms.
-FIXTURE file=all_types_zstd.rbxl format=binary instances=17 roots=15 props=41 classes=13 ms=1 warnings=0 error=-
-  FAIL all_types_zstd.rbxl has 17 instances (expected 19)
-  FAIL all_types_zstd.rbxl has 15 roots (expected 1)
+[18:23:00] INFO  importer: Parsed all_types_zstd (binary) with 19 instances in 2 ms.
+FIXTURE file=all_types_zstd.rbxl format=binary instances=19 roots=1 props=41 classes=15 ms=2 warnings=0 error=-
+  ok   all_types_zstd.rbxl has 19 instances (expected 19)
+  ok   all_types_zstd.rbxl has 1 roots (expected 1)
   ok   all_types_zstd.rbxl was read as binary (expected binary)
-[18:19:51] INFO  importer: Parsed deep-folders-100 (binary) with 2 instances in 2 ms.
-FIXTURE file=deep-folders-100.rbxm format=binary instances=2 roots=2 props=3 classes=1 ms=2 warnings=0 error=-
-  FAIL deep-folders-100.rbxm has 2 instances (expected 100)
-  FAIL deep-folders-100.rbxm has 2 roots (expected 1)
+[18:23:00] INFO  importer: Parsed deep-folders-100 (binary) with 100 instances in 1 ms.
+FIXTURE file=deep-folders-100.rbxm format=binary instances=100 roots=1 props=3 classes=1 ms=1 warnings=0 error=-
+  ok   deep-folders-100.rbxm has 100 instances (expected 100)
+  ok   deep-folders-100.rbxm has 1 roots (expected 1)
   ok   deep-folders-100.rbxm was read as binary (expected binary)
-[18:19:51] INFO  importer: Parsed demo_obby (binary) with 13 instances in 2 ms.
-FIXTURE file=demo_obby.rbxl format=binary instances=13 roots=11 props=31 classes=8 ms=2 warnings=0 error=-
-  FAIL demo_obby.rbxl has 13 instances (expected 33)
-  FAIL demo_obby.rbxl has 11 roots (expected 4)
+[18:23:00] INFO  importer: Parsed demo_obby (binary) with 33 instances in 1 ms.
+FIXTURE file=demo_obby.rbxl format=binary instances=33 roots=4 props=31 classes=8 ms=1 warnings=0 error=-
+  ok   demo_obby.rbxl has 33 instances (expected 33)
+  ok   demo_obby.rbxl has 4 roots (expected 4)
   ok   demo_obby.rbxl was read as binary (expected binary)
-[18:19:51] INFO  importer: Parsed demo_obby (xml) with 33 instances in 4 ms.
-FIXTURE file=demo_obby.rbxlx format=xml instances=33 roots=4 props=-1 classes=8 ms=4 warnings=0 error=-
+[18:23:00] INFO  importer: Parsed demo_obby (xml) with 33 instances in 3 ms.
+FIXTURE file=demo_obby.rbxlx format=xml instances=33 roots=4 props=-1 classes=8 ms=3 warnings=0 error=-
   ok   demo_obby.rbxlx has 33 instances (expected 33)
   ok   demo_obby.rbxlx has 4 roots (expected 4)
   ok   demo_obby.rbxlx was read as xml (expected xml)
-[18:19:51] INFO  importer: Parsed demo_showcase (binary) with 24 instances in 3 ms.
-FIXTURE file=demo_showcase.rbxl format=binary instances=24 roots=22 props=62 classes=13 ms=3 warnings=0 error=-
-  FAIL demo_showcase.rbxl has 24 instances (expected 48)
-  FAIL demo_showcase.rbxl has 22 roots (expected 5)
+[18:23:00] INFO  importer: Parsed demo_showcase (binary) with 48 instances in 2 ms.
+FIXTURE file=demo_showcase.rbxl format=binary instances=48 roots=5 props=62 classes=13 ms=2 warnings=0 error=-
+  ok   demo_showcase.rbxl has 48 instances (expected 48)
+  ok   demo_showcase.rbxl has 5 roots (expected 5)
   ok   demo_showcase.rbxl was read as binary (expected binary)
-[18:19:51] INFO  importer: Parsed demo_showcase (xml) with 48 instances in 6 ms.
-FIXTURE file=demo_showcase.rbxlx format=xml instances=48 roots=5 props=-1 classes=13 ms=6 warnings=0 error=-
+[18:23:00] INFO  importer: Parsed demo_showcase (xml) with 48 instances in 4 ms.
+FIXTURE file=demo_showcase.rbxlx format=xml instances=48 roots=5 props=-1 classes=13 ms=4 warnings=0 error=-
   ok   demo_showcase.rbxlx has 48 instances (expected 48)
   ok   demo_showcase.rbxlx has 5 roots (expected 5)
   ok   demo_showcase.rbxlx was read as xml (expected xml)
-[18:19:51] INFO  importer: Parsed folders-100 (binary) with 2 instances in 2 ms.
-FIXTURE file=folders-100.rbxm format=binary instances=2 roots=1 props=3 classes=1 ms=2 warnings=0 error=-
-  FAIL folders-100.rbxm has 2 instances (expected 100)
+[18:23:00] INFO  importer: Parsed folders-100 (binary) with 100 instances in 2 ms.
+FIXTURE file=folders-100.rbxm format=binary instances=100 roots=1 props=3 classes=1 ms=2 warnings=0 error=-
+  ok   folders-100.rbxm has 100 instances (expected 100)
   ok   folders-100.rbxm has 1 roots (expected 1)
   ok   folders-100.rbxm was read as binary (expected binary)
-[18:19:52] INFO  importer: Parsed parts-1000 (binary) with 2 instances in 118 ms.
-FIXTURE file=parts-1000.rbxm format=binary instances=2 roots=1 props=60 classes=2 ms=118 warnings=0 error=-
-  FAIL parts-1000.rbxm has 2 instances (expected 1001)
+[18:23:00] INFO  importer: Parsed parts-1000 (binary) with 1001 instances in 99 ms.
+FIXTURE file=parts-1000.rbxm format=binary instances=1001 roots=1 props=60 classes=2 ms=99 warnings=0 error=-
+  ok   parts-1000.rbxm has 1001 instances (expected 1001)
   ok   parts-1000.rbxm has 1 roots (expected 1)
   ok   parts-1000.rbxm was read as binary (expected binary)
-  FAIL all_types.rbxl and all_types.rbxlx hold the same number of instances (17 vs 19)
-  FAIL all_types.rbxl and all_types.rbxlx agree on the class histogram
-  FAIL all_types.rbxl and all_types.rbxlx agree on the tree shape
-  FAIL all_types.rbxl and all_types.rbxlx agree on the renderable count
-  FAIL demo_showcase.rbxl and demo_showcase.rbxlx hold the same number of instances (24 vs 48)
-  FAIL demo_showcase.rbxl and demo_showcase.rbxlx agree on the class histogram
-  FAIL demo_showcase.rbxl and demo_showcase.rbxlx agree on the tree shape
-  FAIL demo_showcase.rbxl and demo_showcase.rbxlx agree on the renderable count
-  FAIL demo_obby.rbxl and demo_obby.rbxlx hold the same number of instances (13 vs 33)
-  FAIL demo_obby.rbxl and demo_obby.rbxlx agree on the class histogram
-  FAIL demo_obby.rbxl and demo_obby.rbxlx agree on the tree shape
-  FAIL demo_obby.rbxl and demo_obby.rbxlx agree on the renderable count
-  FAIL the roots are in file order (got 'Referenced, Referenced, BrickColor, Transform, Color, Values, Number, Vector, Image, Attributed, Range, Link, PhysicsPart, Emitter, Hello')
-  FAIL BoolValue.Value round-trips as true
+  ok   all_types.rbxl and all_types.rbxlx hold the same number of instances (19 vs 19)
+  ok   all_types.rbxl and all_types.rbxlx agree on the class histogram
+  ok   all_types.rbxl and all_types.rbxlx agree on the tree shape
+  ok   all_types.rbxl and all_types.rbxlx agree on the renderable count
+  ok   demo_showcase.rbxl and demo_showcase.rbxlx hold the same number of instances (48 vs 48)
+  ok   demo_showcase.rbxl and demo_showcase.rbxlx agree on the class histogram
+  ok   demo_showcase.rbxl and demo_showcase.rbxlx agree on the tree shape
+  ok   demo_showcase.rbxl and demo_showcase.rbxlx agree on the renderable count
+  ok   demo_obby.rbxl and demo_obby.rbxlx hold the same number of instances (33 vs 33)
+  ok   demo_obby.rbxl and demo_obby.rbxlx agree on the class histogram
+  ok   demo_obby.rbxl and demo_obby.rbxlx agree on the tree shape
+  ok   demo_obby.rbxl and demo_obby.rbxlx agree on the renderable count
+  FAIL the roots are in file order (got 'AllTypes')
+  ok   BoolValue.Value round-trips as true
   ok   Vector3Value.Value is Vector3(1.5, -2.25, 3) (got (1.5, -2.25, 3.0))
   ok   the ColorSequence survives as two keypoints (got [{ "t": 0.0, "color": (1.0, 0.0, 0.0, 1.0) }, { "t": 1.0, "color": (0.0, 0.0, 1.0, 1.0) }])
+  FAIL the Sequences folder kept its children (2)
   ok   the reflection database knows Part
   ok   the reflection database knows MeshPart
   ok   Part is a BasePart
@@ -294,50 +295,26 @@ FIXTURE file=parts-1000.rbxm format=binary instances=2 roots=1 props=60 classes=
   ok   properties survive a set/get round trip
   ok   unset properties fall back to the class default
   ok   removing a child unhooks both sides
-IMPORT file=demo_obby.rbxl nodes=13 parts=7 meshes=7 bodies=7 skipped=0 capped=0
+IMPORT file=demo_obby.rbxl nodes=33 parts=27 meshes=27 bodies=27 skipped=0 capped=0
   ok   demo_obby.rbxl produced scene nodes
   ok   demo_obby.rbxl produced parts
-  ok   demo_obby.rbxl gave every part a mesh (7 meshes, 7 parts)
+  ok   demo_obby.rbxl gave every part a mesh (27 meshes, 27 parts)
   ok   demo_obby.rbxl produced collision bodies
-IMPORT file=parts-1000.rbxm nodes=2 parts=1 meshes=1 bodies=1 skipped=0 capped=0
+IMPORT file=parts-1000.rbxm nodes=1001 parts=1000 meshes=1000 bodies=1000 skipped=0 capped=0
   ok   parts-1000.rbxm produced scene nodes
   ok   parts-1000.rbxm produced parts
-  ok   parts-1000.rbxm gave every part a mesh (1 meshes, 1 parts)
+  ok   parts-1000.rbxm gave every part a mesh (1000 meshes, 1000 parts)
   ok   parts-1000.rbxm produced collision bodies
-  ok   the importer tagged the node for instance 2
-  ok   the built transform matches the part's CFrame ((-45.0, 1.0, -20.0) vs (-45.0, 1.0, -20.0))
-CORE_SMOKE FAIL checks=71 failures=26
-  - all_types.rbxl has 17 instances (expected 19)
-  - all_types.rbxl has 15 roots (expected 1)
-  - all_types_zstd.rbxl has 17 instances (expected 19)
-  - all_types_zstd.rbxl has 15 roots (expected 1)
-  - deep-folders-100.rbxm has 2 instances (expected 100)
-  - deep-folders-100.rbxm has 2 roots (expected 1)
-  - demo_obby.rbxl has 13 instances (expected 33)
-  - demo_obby.rbxl has 11 roots (expected 4)
-  - demo_showcase.rbxl has 24 instances (expected 48)
-  - demo_showcase.rbxl has 22 roots (expected 5)
-  - folders-100.rbxm has 2 instances (expected 100)
-  - parts-1000.rbxm has 2 instances (expected 1001)
-  - all_types.rbxl and all_types.rbxlx hold the same number of instances (17 vs 19)
-  - all_types.rbxl and all_types.rbxlx agree on the class histogram
-  - all_types.rbxl and all_types.rbxlx agree on the tree shape
-  - all_types.rbxl and all_types.rbxlx agree on the renderable count
-  - demo_showcase.rbxl and demo_showcase.rbxlx hold the same number of instances (24 vs 48)
-  - demo_showcase.rbxl and demo_showcase.rbxlx agree on the class histogram
-  - demo_showcase.rbxl and demo_showcase.rbxlx agree on the tree shape
-  - demo_showcase.rbxl and demo_showcase.rbxlx agree on the renderable count
-  - demo_obby.rbxl and demo_obby.rbxlx hold the same number of instances (13 vs 33)
-  - demo_obby.rbxl and demo_obby.rbxlx agree on the class histogram
-  - demo_obby.rbxl and demo_obby.rbxlx agree on the tree shape
-  - demo_obby.rbxl and demo_obby.rbxlx agree on the renderable count
-  - the roots are in file order (got 'Referenced, Referenced, BrickColor, Transform, Color, Values, Number, Vector, Image, Attributed, Range, Link, PhysicsPart, Emitter, Hello')
-  - BoolValue.Value round-trips as true
-WARNING: 112 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+  ok   the importer tagged the node for instance 0
+  ok   the built transform matches the part's CFrame ((0.0, -10.0, 0.0) vs (0.0, -10.0, 0.0))
+CORE_SMOKE FAIL checks=72 failures=2
+  - the roots are in file order (got 'AllTypes')
+  - the Sequences folder kept its children (2)
+WARNING: 1410 ObjectDB instances were leaked at exit (run with `--verbose` for details).
    at: cleanup (core/object/object.cpp:2536)
 ERROR: 1 resources still in use at exit (run with --verbose for details).
    at: clear (core/io/resource.cpp:822)
 ERROR: Pages in use exist at exit in PagedAllocator: N12VariantPools12BucketMediumE
    at: ~PagedAllocator (./core/templates/paged_allocator.h:170)
 
---- Smoke / core / run 35460827309 / status failure / 2026-09-19T18:19:52Z ---
+--- Smoke / core / run 35460991063 / status failure / 2026-09-19T18:23:00Z ---
