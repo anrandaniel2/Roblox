@@ -3,12 +3,6 @@ name: Luau extension
 on:
   push:
     branches: [arena/01a0ba62-roblox]
-    paths:
-      - "extensions/luau_vm/**"
-      - "tools/fetch_deps.py"
-      - "tests/luau_smoke.gd"
-      - ".github/workflows/luau-extension.yml"
-      - ".github/scripts/publish_log.sh"
   workflow_dispatch:
 
 permissions:
