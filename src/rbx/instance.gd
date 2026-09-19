@@ -350,6 +350,21 @@ func _to_string() -> String:
 	return "%s(%s)" % [rbx_class, get_name()]
 
 
+## The path from the root down to this instance, the way Roblox's
+## `Instance:GetFullName()` renders it: `Workspace.Folder.Part`.  Scripts reach
+## it through the `full_name` host callable, and the explorer uses it too.
+func path() -> String:
+	var names := PackedStringArray()
+	var node: RBXInstance = self
+	var guard := 0
+	while node != null and guard < 512:
+		names.append(node.get_name())
+		node = node.parent
+		guard += 1
+	names.reverse()
+	return ".".join(names)
+
+
 ## Renders a compact summary for the explorer panel.
 func summary() -> String:
 	return "%s \"%s\"" % [rbx_class, get_name()]
