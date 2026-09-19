@@ -4,6 +4,7 @@
 #include <cstring>
 
 #include <godot_cpp/core/class_db.hpp>
+#include <godot_cpp/variant/char_string.hpp>
 
 // Luau's C API. The headers carry no C++ guards of their own and are meant to be
 // included directly.
@@ -174,7 +175,7 @@ bool LuauVMState::is_sandboxed() const {
 }
 
 void LuauVMState::set_optimization_level(int p_level) {
-	optimization_level = CLAMP(p_level, 0, 2);
+	optimization_level = p_level < 0 ? 0 : (p_level > 2 ? 2 : p_level);
 }
 
 int LuauVMState::get_optimization_level() const {
