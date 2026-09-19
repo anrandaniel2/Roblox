@@ -440,12 +440,22 @@ function task.spawn(fn, ...) return fn(...) end
 function task.defer(fn, ...) return fn(...) end
 function task.delay(_, fn, ...) return fn(...) end
 
-workspace = wrap(host.service('Workspace'))
-game = game
-Instance = Instance
-Vector3 = Vector3
-CFrame = CFrame
-task = task
+-- Hand the object model to scripts.  Every table above is a local, so
+-- `Instance = Instance` would just write the local again (the name resolves to
+-- the local in scope) and scripts would find empty globals -- which is exactly
+-- what "attempt to index nil with 'new'" meant.  The global table has to be
+-- named explicitly.
+local exports = {
+	Instance = Instance,
+	Vector3 = Vector3,
+	CFrame = CFrame,
+	game = game,
+	task = task,
+	workspace = wrap(host.service('Workspace')),
+}
+for name, value in exports do
+	_G[name] = value
+end
 
 function wait(seconds) return task.wait(seconds) end
 function spawn(fn, ...) return task.spawn(fn, ...) end
