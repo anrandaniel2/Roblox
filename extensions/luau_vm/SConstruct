@@ -23,9 +23,13 @@ else:
 
 luau_root = os.path.join("extern", "luau")
 
-# headers: Common (spans), Ast, Compiler (luau_compile) and the VM itself.
-for include in ("Common/include", "Ast/include", "Compiler/include", "VM/include"):
-    env.Append(CPPPATH=[os.path.join(luau_root, include)])
+# Every component of Luau exposes its headers under `<component>/include`, and
+# they cross-reference each other (the Compiler pulls in Bytecode, for example),
+# so add them all rather than guessing per source group.
+for entry in sorted(os.listdir(luau_root)) if os.path.isdir(luau_root) else []:
+    candidate = os.path.join(luau_root, entry, "include")
+    if os.path.isdir(candidate):
+        env.Append(CPPPATH=[candidate])
 
 # Only what a runtime needs: parsing (Ast), bytecode generation (Compiler) and
 # execution (VM). CodeGen/Analysis/Inliner are for native codegen, type checking
