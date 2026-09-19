@@ -38,8 +38,6 @@ ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the
 [  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
 [92m[ DONE ][39m [1mfirst_scan_filesystem[22m
 [0m
-Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
-Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
    at: hex_to_int (core/string/ustring.cpp:2216)
 ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
@@ -47,11 +45,13 @@ ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
-ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
-   at: hex_to_int (core/string/ustring.cpp:2216)
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
    at: hex_to_int (core/string/ustring.cpp:2216)
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
    at: hex_to_int (core/string/ustring.cpp:2216)
@@ -164,8 +164,8 @@ Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpect
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
    at: hex_to_int (core/string/ustring.cpp:2216)
-[18:24:43] INFO  app: Rbx Engine 1.0.0 on Linux.
-[18:24:43] INFO  app: Input: mouse + keyboard. Quality: HIGH.
+[18:27:10] INFO  app: Rbx Engine 1.0.0 on Linux.
+[18:27:10] INFO  app: Input: mouse + keyboard. Quality: HIGH.
 ERROR: Can't open dynamic library, file not found: '/home/runner/work/Roblox/Roblox/extensions/luau_vm/bin/libluau_vm.linux.template_debug.x86_64.so'.
    at: open_dynamic_library (drivers/unix/os_unix.cpp:1063)
 ERROR: GDExtension dynamic library not found: 'res://extensions/luau_vm/luau_vm.gdextension'.
@@ -199,13 +199,13 @@ ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the
    at: hex_to_int (core/string/ustring.cpp:2216)
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
-[18:24:44] INFO  app: Rbx Engine 1.0.0 on Linux.
-[18:24:44] INFO  app: Input: mouse + keyboard. Quality: HIGH.
+[18:27:11] INFO  app: Rbx Engine 1.0.0 on Linux.
+[18:27:11] INFO  app: Input: mouse + keyboard. Quality: HIGH.
 --- core smoke test ---
 Godot 4.7.2-stable (official)
-[18:24:44] INFO  data: Loaded 892 classes, 596 enums, 208 BrickColors.
-[18:24:44] INFO  importer: Parsed all_types (binary) with 19 instances in 21 ms.
-FIXTURE file=all_types.rbxl format=binary instances=19 roots=1 props=41 classes=15 ms=21 warnings=0 error=-
+[18:27:11] INFO  data: Loaded 892 classes, 596 enums, 208 BrickColors.
+[18:27:11] INFO  importer: Parsed all_types (binary) with 19 instances in 19 ms.
+FIXTURE file=all_types.rbxl format=binary instances=19 roots=1 props=41 classes=15 ms=19 warnings=0 error=-
   ok   all_types.rbxl has 19 instances (expected 19)
   ok   all_types.rbxl has 1 roots (expected 1)
   ok   all_types.rbxl was read as binary (expected binary)
@@ -218,48 +218,48 @@ ERROR: Condition "node_type != NODE_TEXT" is true. Returning: ""
        [3] load_file (res://src/rbx/file_loader.gd:42)
        [4] _check_fixture (res://tests/core_smoke.gd:77)
        [5] _ready (res://tests/core_smoke.gd:47)
-[18:24:44] INFO  importer: Parsed all_types (xml) with 19 instances in 1 ms.
+[18:27:11] INFO  importer: Parsed all_types (xml) with 19 instances in 1 ms.
 FIXTURE file=all_types.rbxlx format=xml instances=19 roots=1 props=-1 classes=15 ms=1 warnings=0 error=-
   ok   all_types.rbxlx has 19 instances (expected 19)
   ok   all_types.rbxlx has 1 roots (expected 1)
   ok   all_types.rbxlx was read as xml (expected xml)
-[18:24:44] INFO  importer: Parsed all_types_zstd (binary) with 19 instances in 1 ms.
-FIXTURE file=all_types_zstd.rbxl format=binary instances=19 roots=1 props=41 classes=15 ms=1 warnings=0 error=-
+[18:27:11] INFO  importer: Parsed all_types_zstd (binary) with 19 instances in 2 ms.
+FIXTURE file=all_types_zstd.rbxl format=binary instances=19 roots=1 props=41 classes=15 ms=2 warnings=0 error=-
   ok   all_types_zstd.rbxl has 19 instances (expected 19)
   ok   all_types_zstd.rbxl has 1 roots (expected 1)
   ok   all_types_zstd.rbxl was read as binary (expected binary)
-[18:24:44] INFO  importer: Parsed deep-folders-100 (binary) with 100 instances in 2 ms.
+[18:27:11] INFO  importer: Parsed deep-folders-100 (binary) with 100 instances in 2 ms.
 FIXTURE file=deep-folders-100.rbxm format=binary instances=100 roots=1 props=3 classes=1 ms=2 warnings=0 error=-
   ok   deep-folders-100.rbxm has 100 instances (expected 100)
   ok   deep-folders-100.rbxm has 1 roots (expected 1)
   ok   deep-folders-100.rbxm was read as binary (expected binary)
-[18:24:44] INFO  importer: Parsed demo_obby (binary) with 33 instances in 2 ms.
-FIXTURE file=demo_obby.rbxl format=binary instances=33 roots=4 props=31 classes=8 ms=2 warnings=0 error=-
+[18:27:11] INFO  importer: Parsed demo_obby (binary) with 33 instances in 1 ms.
+FIXTURE file=demo_obby.rbxl format=binary instances=33 roots=4 props=31 classes=8 ms=1 warnings=0 error=-
   ok   demo_obby.rbxl has 33 instances (expected 33)
   ok   demo_obby.rbxl has 4 roots (expected 4)
   ok   demo_obby.rbxl was read as binary (expected binary)
-[18:24:44] INFO  importer: Parsed demo_obby (xml) with 33 instances in 4 ms.
+[18:27:11] INFO  importer: Parsed demo_obby (xml) with 33 instances in 4 ms.
 FIXTURE file=demo_obby.rbxlx format=xml instances=33 roots=4 props=-1 classes=8 ms=4 warnings=0 error=-
   ok   demo_obby.rbxlx has 33 instances (expected 33)
   ok   demo_obby.rbxlx has 4 roots (expected 4)
   ok   demo_obby.rbxlx was read as xml (expected xml)
-[18:24:44] INFO  importer: Parsed demo_showcase (binary) with 48 instances in 3 ms.
+[18:27:11] INFO  importer: Parsed demo_showcase (binary) with 48 instances in 3 ms.
 FIXTURE file=demo_showcase.rbxl format=binary instances=48 roots=5 props=62 classes=13 ms=3 warnings=0 error=-
   ok   demo_showcase.rbxl has 48 instances (expected 48)
   ok   demo_showcase.rbxl has 5 roots (expected 5)
   ok   demo_showcase.rbxl was read as binary (expected binary)
-[18:24:44] INFO  importer: Parsed demo_showcase (xml) with 48 instances in 5 ms.
+[18:27:11] INFO  importer: Parsed demo_showcase (xml) with 48 instances in 5 ms.
 FIXTURE file=demo_showcase.rbxlx format=xml instances=48 roots=5 props=-1 classes=13 ms=5 warnings=0 error=-
   ok   demo_showcase.rbxlx has 48 instances (expected 48)
   ok   demo_showcase.rbxlx has 5 roots (expected 5)
   ok   demo_showcase.rbxlx was read as xml (expected xml)
-[18:24:44] INFO  importer: Parsed folders-100 (binary) with 100 instances in 2 ms.
+[18:27:11] INFO  importer: Parsed folders-100 (binary) with 100 instances in 2 ms.
 FIXTURE file=folders-100.rbxm format=binary instances=100 roots=1 props=3 classes=1 ms=2 warnings=0 error=-
   ok   folders-100.rbxm has 100 instances (expected 100)
   ok   folders-100.rbxm has 1 roots (expected 1)
   ok   folders-100.rbxm was read as binary (expected binary)
-[18:24:45] INFO  importer: Parsed parts-1000 (binary) with 1001 instances in 126 ms.
-FIXTURE file=parts-1000.rbxm format=binary instances=1001 roots=1 props=60 classes=2 ms=126 warnings=0 error=-
+[18:27:11] INFO  importer: Parsed parts-1000 (binary) with 1001 instances in 136 ms.
+FIXTURE file=parts-1000.rbxm format=binary instances=1001 roots=1 props=60 classes=2 ms=136 warnings=0 error=-
   ok   parts-1000.rbxm has 1001 instances (expected 1001)
   ok   parts-1000.rbxm has 1 roots (expected 1)
   ok   parts-1000.rbxm was read as binary (expected binary)
@@ -329,4 +329,4 @@ parts-1000.rbxm           1001/1001     1/1       2/2      60/60
 
 all 10 fixtures match the reference reader
 
---- Smoke / core / run 35461090594 / status success / 2026-09-19T18:24:45Z ---
+--- Smoke / core / run 35461213214 / status success / 2026-09-19T18:27:12Z ---
