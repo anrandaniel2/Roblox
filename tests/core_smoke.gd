@@ -159,11 +159,23 @@ func _check_values() -> void:
 	if place == null:
 		return
 
+	# The fixture is one root ("AllTypes") whose children are the interesting
+	# bits: the value folder, the sequence folder and a few parts.
 	var names := PackedStringArray()
 	for root: RBXInstance in place.roots:
 		names.append(root.get_name())
-	_check(", ".join(names) == "Bool, Vector, Emitter, Link, Sequences",
-		"the roots are in file order (got '%s')" % ", ".join(names))
+	_check(", ".join(names) == "AllTypes",
+		"the place has the one root the file describes (got '%s')" % ", ".join(names))
+
+	var container := _find(place, "AllTypes")
+	if container == null:
+		_fail("the AllTypes root was not parsed")
+	else:
+		var order := PackedStringArray()
+		for child: RBXInstance in container.children:
+			order.append(child.get_name())
+		_check(", ".join(order) == "Values, Sequences, PhysicsPart, Referenced, Link, Attributed, Hello",
+			"the root keeps its children in file order (got '%s')" % ", ".join(order))
 
 	var bool_value := _find(place, "Bool")
 	var vector_value := _find(place, "Vector")
@@ -183,7 +195,7 @@ func _check_values() -> void:
 
 	var sequences := _find(place, "Sequences")
 	if sequences != null:
-		_check(sequences.children.size() >= 4,
+		_check(sequences.children.size() == 2,
 			"the Sequences folder kept its children (%d)" % sequences.children.size())
 
 
