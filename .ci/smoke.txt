@@ -1,3 +1,4 @@
+checked 23 scripts against Godot 4.7.0: no unknown engine API
 4.7.2.stable.official.ed1daf0bf
 Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 
@@ -18,17 +19,26 @@ Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpect
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
-SCRIPT ERROR: Parse Error: The method "to_string()" overrides a method from native class "Object". This won't be called by the engine and may not work as expected. (Warning treated as error.)
-          at: GDScript::reload (res://src/rbx/instance.gd:347)
-SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
-          at: GDScript::reload (res://src/rbx/place.gd:0)
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
-SCRIPT ERROR: Parse Error: Identifier "Compression" not declared in the current scope.
-          at: GDScript::reload (res://src/rbx/file_loader.gd:58)
-SCRIPT ERROR: Parse Error: Identifier "Compression" not declared in the current scope.
-          at: GDScript::reload (res://src/rbx/file_loader.gd:58)
-SCRIPT ERROR: Parse Error: Cannot infer the type of "decompressed" variable because the value doesn't have a set type.
-          at: GDScript::reload (res://src/rbx/file_loader.gd:58)
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+SCRIPT ERROR: Parse Error: Assigned value for constant "SIGNATURE" isn't a constant expression.
+          at: GDScript::reload (res://src/rbx/binary_reader.gd:16)
+SCRIPT ERROR: Parse Error: Assigned value for constant "ZSTD_MAGIC" isn't a constant expression.
+          at: GDScript::reload (res://src/rbx/binary_reader.gd:17)
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+          at: GDScript::reload (res://src/rbx/file_loader.gd:0)
 SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
           at: GDScript::reload (res://src/core/rbx_app.gd:0)
 ERROR: Failed to load script "res://src/core/rbx_app.gd" with error "Parse error".
@@ -37,48 +47,59 @@ ERROR: Failed to load script "res://src/core/rbx_app.gd" with error "Parse error
 [  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
 [92m[ DONE ][39m [1mfirst_scan_filesystem[22m
 [0m
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
-Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
-Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
-SCRIPT ERROR: Parse Error: The method "to_string()" overrides a method from native class "Object". This won't be called by the engine and may not work as expected. (Warning treated as error.)
-          at: GDScript::reload (res://src/rbx/instance.gd:347)
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
    at: hex_to_int (core/string/ustring.cpp:2216)
-SCRIPT ERROR: Parse Error: Identifier "Compression" not declared in the current scope.
-          at: GDScript::reload (res://src/rbx/file_loader.gd:58)
-SCRIPT ERROR: Parse Error: Identifier "Compression" not declared in the current scope.
-          at: GDScript::reload (res://src/rbx/file_loader.gd:58)
-SCRIPT ERROR: Parse Error: Cannot infer the type of "decompressed" variable because the value doesn't have a set type.
-          at: GDScript::reload (res://src/rbx/file_loader.gd:58)
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+SCRIPT ERROR: Parse Error: Assigned value for constant "SIGNATURE" isn't a constant expression.
+          at: GDScript::reload (res://src/rbx/binary_reader.gd:16)
+SCRIPT ERROR: Parse Error: Assigned value for constant "ZSTD_MAGIC" isn't a constant expression.
+          at: GDScript::reload (res://src/rbx/binary_reader.gd:17)
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
-[   0% ] [90m[1mupdate_scripts_classes[22m | Started Registering global classes... (22 steps)[39m[0m
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started Registering global classes... (23 steps)[39m[0m
 [   0% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
 [   4% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
 [   8% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
-[  13% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
-[  17% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
-[  21% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
-[  26% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
-[  30% ] [90m[1mupdate_scripts_classes[22m | RBXSceneBuilder[39m[0m
-[  34% ] [90m[1mupdate_scripts_classes[22m | RBXScriptAPI[39m[0m
-[  39% ] [90m[1mupdate_scripts_classes[22m | RBXScriptRuntime[39m[0m
-[  43% ] [90m[1mupdate_scripts_classes[22m | RBXBinaryReader[39m[0m
-[  47% ] [90m[1mupdate_scripts_classes[22m | RBXByteReader[39m[0m
-[  52% ] [90m[1mupdate_scripts_classes[22m | RBXValues[39m[0m
-[  56% ] [90m[1mupdate_scripts_classes[22m | RBXFileLoader[39m[0m
-[  60% ] [90m[1mupdate_scripts_classes[22m | RBXInstance[39m[0m
-[  65% ] [90m[1mupdate_scripts_classes[22m | RBXLZ4[39m[0m
-[  69% ] [90m[1mupdate_scripts_classes[22m | RBXPlace[39m[0m
-[  73% ] [90m[1mupdate_scripts_classes[22m | RBXXmlReader[39m[0m
-[  78% ] [90m[1mupdate_scripts_classes[22m | RBXPlaceView[39m[0m
-[  82% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
-[  86% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  12% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  16% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  20% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  25% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  29% ] [90m[1mupdate_scripts_classes[22m | RBXSceneBuilder[39m[0m
+[  33% ] [90m[1mupdate_scripts_classes[22m | RBXScriptAPI[39m[0m
+[  37% ] [90m[1mupdate_scripts_classes[22m | RBXScriptRuntime[39m[0m
+[  41% ] [90m[1mupdate_scripts_classes[22m | RBXBinaryReader[39m[0m
+[  45% ] [90m[1mupdate_scripts_classes[22m | RBXByteReader[39m[0m
+[  50% ] [90m[1mupdate_scripts_classes[22m | RBXValues[39m[0m
+[  54% ] [90m[1mupdate_scripts_classes[22m | RBXFileLoader[39m[0m
+[  58% ] [90m[1mupdate_scripts_classes[22m | RBXInstance[39m[0m
+[  62% ] [90m[1mupdate_scripts_classes[22m | RBXLZ4[39m[0m
+[  66% ] [90m[1mupdate_scripts_classes[22m | RBXPlace[39m[0m
+[  70% ] [90m[1mupdate_scripts_classes[22m | RBXXmlReader[39m[0m
+[  75% ] [90m[1mupdate_scripts_classes[22m | RBXZstd[39m[0m
+[  79% ] [90m[1mupdate_scripts_classes[22m | RBXPlaceView[39m[0m
+[  83% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  87% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
 [  91% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
 [92m[ DONE ][39m [1mupdate_scripts_classes[22m
 [0m
@@ -102,31 +123,27 @@ ERROR: GDExtension dynamic library not found: 'res://extensions/luau_vm/luau_vm.
 [  16% ] [90m[1mloading_editor_layout[22m | Loading docks...[39m[0m
 [92m[ DONE ][39m [1mloading_editor_layout[22m
 [0m
-SCRIPT ERROR: Parse Error: Cannot infer the type of "simulate" variable because the value doesn't have a set type.
-          at: GDScript::reload (res://src/importer/scene_builder.gd:138)
-SCRIPT ERROR: Parse Error: Static function "brick_color_color()" not found in base "RBXValues".
-          at: GDScript::reload (res://src/importer/scene_builder.gd:341)
-SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
-          at: GDScript::reload (res://src/ui/place_view.gd:0)
-SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
-          at: GDScript::reload (res://src/app/main.gd:0)
-ERROR: Failed to load script "res://src/app/main.gd" with error "Parse error".
-   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
-SCRIPT ERROR: Parse Error: Cannot infer the type of "simulate" variable because the value doesn't have a set type.
-          at: GDScript::reload (res://src/importer/scene_builder.gd:138)
-SCRIPT ERROR: Parse Error: Static function "brick_color_color()" not found in base "RBXValues".
-          at: GDScript::reload (res://src/importer/scene_builder.gd:341)
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
-SCRIPT ERROR: Parse Error: The method "to_string()" overrides a method from native class "Object". This won't be called by the engine and may not work as expected. (Warning treated as error.)
-          at: GDScript::reload (res://src/rbx/instance.gd:347)
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
-SCRIPT ERROR: Parse Error: Identifier "Compression" not declared in the current scope.
-          at: GDScript::reload (res://src/rbx/file_loader.gd:58)
-SCRIPT ERROR: Parse Error: Identifier "Compression" not declared in the current scope.
-          at: GDScript::reload (res://src/rbx/file_loader.gd:58)
-SCRIPT ERROR: Parse Error: Cannot infer the type of "decompressed" variable because the value doesn't have a set type.
-          at: GDScript::reload (res://src/rbx/file_loader.gd:58)
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+SCRIPT ERROR: Parse Error: Assigned value for constant "SIGNATURE" isn't a constant expression.
+          at: GDScript::reload (res://src/rbx/binary_reader.gd:16)
+SCRIPT ERROR: Parse Error: Assigned value for constant "ZSTD_MAGIC" isn't a constant expression.
+          at: GDScript::reload (res://src/rbx/binary_reader.gd:17)
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
@@ -147,33 +164,32 @@ Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpect
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
-SCRIPT ERROR: Parse Error: The method "to_string()" overrides a method from native class "Object". This won't be called by the engine and may not work as expected. (Warning treated as error.)
-          at: GDScript::reload (res://src/rbx/instance.gd:347)
-SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
-          at: GDScript::reload (res://src/rbx/place.gd:0)
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
-SCRIPT ERROR: Parse Error: Identifier "Compression" not declared in the current scope.
-          at: GDScript::reload (res://src/rbx/file_loader.gd:58)
-SCRIPT ERROR: Parse Error: Identifier "Compression" not declared in the current scope.
-          at: GDScript::reload (res://src/rbx/file_loader.gd:58)
-SCRIPT ERROR: Parse Error: Cannot infer the type of "decompressed" variable because the value doesn't have a set type.
-          at: GDScript::reload (res://src/rbx/file_loader.gd:58)
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+SCRIPT ERROR: Parse Error: Assigned value for constant "SIGNATURE" isn't a constant expression.
+          at: GDScript::reload (res://src/rbx/binary_reader.gd:16)
+SCRIPT ERROR: Parse Error: Assigned value for constant "ZSTD_MAGIC" isn't a constant expression.
+          at: GDScript::reload (res://src/rbx/binary_reader.gd:17)
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+          at: GDScript::reload (res://src/rbx/file_loader.gd:0)
 SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
           at: GDScript::reload (res://src/core/rbx_app.gd:0)
 ERROR: Failed to load script "res://src/core/rbx_app.gd" with error "Compilation failed".
    at: load (modules/gdscript/gdscript_resource_format.cpp:46)
-SCRIPT ERROR: Parse Error: Cannot infer the type of "simulate" variable because the value doesn't have a set type.
-          at: GDScript::reload (res://src/importer/scene_builder.gd:138)
-SCRIPT ERROR: Parse Error: Static function "brick_color_color()" not found in base "RBXValues".
-          at: GDScript::reload (res://src/importer/scene_builder.gd:341)
-SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
-          at: GDScript::reload (res://src/ui/place_view.gd:0)
-SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
-          at: GDScript::reload (res://src/app/main.gd:0)
-ERROR: Failed to load script "res://src/app/main.gd" with error "Compilation failed".
-   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
-[18:12:27] INFO  app: Rbx Engine 1.0.0 on Linux.
-[18:12:27] INFO  app: Input: mouse + keyboard. Quality: HIGH.
+[18:15:48] INFO  app: Rbx Engine 1.0.0 on Linux.
+[18:15:48] INFO  app: Input: mouse + keyboard. Quality: HIGH.
 ERROR: Can't open dynamic library, file not found: '/home/runner/work/Roblox/Roblox/extensions/luau_vm/bin/libluau_vm.linux.template_debug.x86_64.so'.
    at: open_dynamic_library (drivers/unix/os_unix.cpp:1063)
 ERROR: GDExtension dynamic library not found: 'res://extensions/luau_vm/luau_vm.gdextension'.
@@ -190,44 +206,159 @@ Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpect
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
-SCRIPT ERROR: Parse Error: The method "to_string()" overrides a method from native class "Object". This won't be called by the engine and may not work as expected. (Warning treated as error.)
-          at: GDScript::reload (res://src/rbx/instance.gd:347)
-SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
-          at: GDScript::reload (res://src/rbx/place.gd:0)
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
-SCRIPT ERROR: Parse Error: Identifier "Compression" not declared in the current scope.
-          at: GDScript::reload (res://src/rbx/file_loader.gd:58)
-SCRIPT ERROR: Parse Error: Identifier "Compression" not declared in the current scope.
-          at: GDScript::reload (res://src/rbx/file_loader.gd:58)
-SCRIPT ERROR: Parse Error: Cannot infer the type of "decompressed" variable because the value doesn't have a set type.
-          at: GDScript::reload (res://src/rbx/file_loader.gd:58)
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+SCRIPT ERROR: Parse Error: Assigned value for constant "SIGNATURE" isn't a constant expression.
+          at: GDScript::reload (res://src/rbx/binary_reader.gd:16)
+SCRIPT ERROR: Parse Error: Assigned value for constant "ZSTD_MAGIC" isn't a constant expression.
+          at: GDScript::reload (res://src/rbx/binary_reader.gd:17)
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
+ERROR: Cannot represent 0xFFFFFFFFFFFFFFFF as a 64-bit signed integer, since the value is too large.
+   at: hex_to_int (core/string/ustring.cpp:2216)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+          at: GDScript::reload (res://src/rbx/file_loader.gd:0)
 SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
           at: GDScript::reload (res://src/core/rbx_app.gd:0)
 ERROR: Failed to load script "res://src/core/rbx_app.gd" with error "Compilation failed".
    at: load (modules/gdscript/gdscript_resource_format.cpp:46)
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
 Unicode parsing error, some characters were replaced with � (U+FFFD): Unexpected NUL character
-SCRIPT ERROR: Parse Error: Cannot infer the type of "simulate" variable because the value doesn't have a set type.
-          at: GDScript::reload (res://src/importer/scene_builder.gd:138)
-SCRIPT ERROR: Parse Error: Static function "brick_color_color()" not found in base "RBXValues".
-          at: GDScript::reload (res://src/importer/scene_builder.gd:341)
-SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
-          at: GDScript::reload (res://tests/core_smoke.gd:0)
-ERROR: Failed to load script "res://tests/core_smoke.gd" with error "Compilation failed".
-   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
-[18:12:29] INFO  app: Rbx Engine 1.0.0 on Linux.
-[18:12:29] INFO  app: Input: mouse + keyboard. Quality: HIGH.
+[18:15:50] INFO  app: Rbx Engine 1.0.0 on Linux.
+[18:15:50] INFO  app: Input: mouse + keyboard. Quality: HIGH.
 --- core smoke test ---
 Godot 4.7.2-stable (official)
-SCRIPT ERROR: Invalid call. Nonexistent function 'is_supported' in base 'GDScript'.
-          at: _fixture_files (res://tests/core_smoke.gd:63)
+SCRIPT ERROR: Invalid call. Nonexistent function 'new' in base 'GDScript'.
+          at: parse_bytes (res://src/rbx/file_loader.gd:69)
           GDScript backtrace (most recent call first):
-              [0] _fixture_files (res://tests/core_smoke.gd:63)
-              [1] _ready (res://tests/core_smoke.gd:46)
-[18:12:29] WARN  data: Could not open res://data/reflection.json.gz for reading.
-[18:12:29] WARN  data: Could not open res://data/enums.json.gz for reading.
-[18:12:29] WARN  data: Could not open res://data/brickcolors.json.gz for reading.
-[18:12:29] WARN  data: Reflection database not found; property names will be used verbatim.
+              [0] parse_bytes (res://src/rbx/file_loader.gd:69)
+              [1] load_file (res://src/rbx/file_loader.gd:42)
+              [2] _check_fixture (res://tests/core_smoke.gd:77)
+              [3] _ready (res://tests/core_smoke.gd:47)
+SCRIPT ERROR: Invalid call. Nonexistent function 'total_instances' in base 'Nil'.
+          at: _check_fixture (res://tests/core_smoke.gd:80)
+          GDScript backtrace (most recent call first):
+              [0] _check_fixture (res://tests/core_smoke.gd:80)
+              [1] _ready (res://tests/core_smoke.gd:47)
+ERROR: Parse JSON failed. Error at line 0: Expected 'true', 'false', or 'null', got 'Infinity'
+   at: parse_string (core/io/json.cpp:629)
+   GDScript backtrace (most recent call first):
+       [0] _read_json (res://src/core/rbx_data.gd:309)
+       [1] ensure_loaded (res://src/core/rbx_data.gd:48)
+       [2] has_class (res://src/core/rbx_data.gd:73)
+       [3] create (res://src/rbx/instance.gd:43)
+       [4] _read_item (res://src/rbx/xml_reader.gd:83)
+       [5] parse (res://src/rbx/xml_reader.gd:43)
+       [6] parse_bytes (res://src/rbx/file_loader.gd:74)
+       [7] load_file (res://src/rbx/file_loader.gd:42)
+       [8] _check_fixture (res://tests/core_smoke.gd:77)
+       [9] _ready (res://tests/core_smoke.gd:47)
+[18:15:50] ERROR data: Failed to parse res://data/reflection.json.gz (invalid JSON).
+[18:15:50] WARN  data: Reflection database not found; property names will be used verbatim.
+ERROR: Condition "node_type != NODE_TEXT" is true. Returning: ""
+   at: get_node_data (core/io/xml_parser.cpp:392)
+   GDScript backtrace (most recent call first):
+       [0] _read_element (res://src/rbx/xml_reader.gd:106)
+       [1] parse (res://src/rbx/xml_reader.gd:58)
+       [2] parse_bytes (res://src/rbx/file_loader.gd:74)
+       [3] load_file (res://src/rbx/file_loader.gd:42)
+       [4] _check_fixture (res://tests/core_smoke.gd:77)
+       [5] _ready (res://tests/core_smoke.gd:47)
+[18:15:50] INFO  importer: Parsed all_types (xml) with 19 instances in 8 ms.
+FIXTURE file=all_types.rbxlx format=xml instances=19 roots=1 props=-1 classes=15 ms=8 warnings=0 error=-
+  ok   all_types.rbxlx has 19 instances (expected 19)
+  FAIL all_types.rbxlx has 1 roots (expected 5)
+  ok   all_types.rbxlx was read as xml (expected xml)
+SCRIPT ERROR: Invalid call. Nonexistent function 'new' in base 'GDScript'.
+          at: parse_bytes (res://src/rbx/file_loader.gd:69)
+          GDScript backtrace (most recent call first):
+              [0] parse_bytes (res://src/rbx/file_loader.gd:69)
+              [1] load_file (res://src/rbx/file_loader.gd:42)
+              [2] _check_fixture (res://tests/core_smoke.gd:77)
+              [3] _ready (res://tests/core_smoke.gd:47)
+SCRIPT ERROR: Invalid call. Nonexistent function 'total_instances' in base 'Nil'.
+          at: _check_fixture (res://tests/core_smoke.gd:80)
+          GDScript backtrace (most recent call first):
+              [0] _check_fixture (res://tests/core_smoke.gd:80)
+              [1] _ready (res://tests/core_smoke.gd:47)
+SCRIPT ERROR: Invalid call. Nonexistent function 'new' in base 'GDScript'.
+          at: parse_bytes (res://src/rbx/file_loader.gd:69)
+          GDScript backtrace (most recent call first):
+              [0] parse_bytes (res://src/rbx/file_loader.gd:69)
+              [1] load_file (res://src/rbx/file_loader.gd:42)
+              [2] _check_fixture (res://tests/core_smoke.gd:77)
+              [3] _ready (res://tests/core_smoke.gd:47)
+SCRIPT ERROR: Invalid call. Nonexistent function 'total_instances' in base 'Nil'.
+          at: _check_fixture (res://tests/core_smoke.gd:80)
+          GDScript backtrace (most recent call first):
+              [0] _check_fixture (res://tests/core_smoke.gd:80)
+              [1] _ready (res://tests/core_smoke.gd:47)
+SCRIPT ERROR: Invalid call. Nonexistent function 'new' in base 'GDScript'.
+          at: parse_bytes (res://src/rbx/file_loader.gd:69)
+          GDScript backtrace (most recent call first):
+              [0] parse_bytes (res://src/rbx/file_loader.gd:69)
+              [1] load_file (res://src/rbx/file_loader.gd:42)
+              [2] _check_fixture (res://tests/core_smoke.gd:77)
+              [3] _ready (res://tests/core_smoke.gd:47)
+SCRIPT ERROR: Invalid call. Nonexistent function 'total_instances' in base 'Nil'.
+          at: _check_fixture (res://tests/core_smoke.gd:80)
+          GDScript backtrace (most recent call first):
+              [0] _check_fixture (res://tests/core_smoke.gd:80)
+              [1] _ready (res://tests/core_smoke.gd:47)
+[18:15:50] INFO  importer: Parsed demo_obby (xml) with 33 instances in 4 ms.
+FIXTURE file=demo_obby.rbxlx format=xml instances=33 roots=4 props=-1 classes=8 ms=4 warnings=0 error=-
+  FAIL demo_obby.rbxlx has 33 instances (expected 32)
+  FAIL demo_obby.rbxlx has 4 roots (expected 1)
+  ok   demo_obby.rbxlx was read as xml (expected xml)
+SCRIPT ERROR: Invalid call. Nonexistent function 'new' in base 'GDScript'.
+          at: parse_bytes (res://src/rbx/file_loader.gd:69)
+          GDScript backtrace (most recent call first):
+              [0] parse_bytes (res://src/rbx/file_loader.gd:69)
+              [1] load_file (res://src/rbx/file_loader.gd:42)
+              [2] _check_fixture (res://tests/core_smoke.gd:77)
+              [3] _ready (res://tests/core_smoke.gd:47)
+SCRIPT ERROR: Invalid call. Nonexistent function 'total_instances' in base 'Nil'.
+          at: _check_fixture (res://tests/core_smoke.gd:80)
+          GDScript backtrace (most recent call first):
+              [0] _check_fixture (res://tests/core_smoke.gd:80)
+              [1] _ready (res://tests/core_smoke.gd:47)
+[18:15:50] INFO  importer: Parsed demo_showcase (xml) with 48 instances in 5 ms.
+FIXTURE file=demo_showcase.rbxlx format=xml instances=48 roots=5 props=-1 classes=13 ms=5 warnings=0 error=-
+  FAIL demo_showcase.rbxlx has 48 instances (expected 46)
+  ok   demo_showcase.rbxlx has 5 roots (expected 5)
+  ok   demo_showcase.rbxlx was read as xml (expected xml)
+SCRIPT ERROR: Invalid call. Nonexistent function 'new' in base 'GDScript'.
+          at: parse_bytes (res://src/rbx/file_loader.gd:69)
+          GDScript backtrace (most recent call first):
+              [0] parse_bytes (res://src/rbx/file_loader.gd:69)
+              [1] load_file (res://src/rbx/file_loader.gd:42)
+              [2] _check_fixture (res://tests/core_smoke.gd:77)
+              [3] _ready (res://tests/core_smoke.gd:47)
+SCRIPT ERROR: Invalid call. Nonexistent function 'total_instances' in base 'Nil'.
+          at: _check_fixture (res://tests/core_smoke.gd:80)
+          GDScript backtrace (most recent call first):
+              [0] _check_fixture (res://tests/core_smoke.gd:80)
+              [1] _ready (res://tests/core_smoke.gd:47)
+SCRIPT ERROR: Invalid call. Nonexistent function 'new' in base 'GDScript'.
+          at: parse_bytes (res://src/rbx/file_loader.gd:69)
+          GDScript backtrace (most recent call first):
+              [0] parse_bytes (res://src/rbx/file_loader.gd:69)
+              [1] load_file (res://src/rbx/file_loader.gd:42)
+              [2] _check_fixture (res://tests/core_smoke.gd:77)
+              [3] _ready (res://tests/core_smoke.gd:47)
+SCRIPT ERROR: Invalid call. Nonexistent function 'total_instances' in base 'Nil'.
+          at: _check_fixture (res://tests/core_smoke.gd:80)
+          GDScript backtrace (most recent call first):
+              [0] _check_fixture (res://tests/core_smoke.gd:80)
+              [1] _ready (res://tests/core_smoke.gd:47)
   FAIL the reflection database knows Part
   FAIL the reflection database knows MeshPart
   FAIL Part is a BasePart
@@ -236,13 +367,18 @@ SCRIPT ERROR: Invalid call. Nonexistent function 'is_supported' in base 'GDScrip
   FAIL Part.Shape is an enum (got '')
   FAIL the default Part.Size is Vector3(4, 1.2, 2) (got <null>)
   FAIL the default Part.Anchored is false
-  FAIL Material.Plastic is 256 (got 0)
-SCRIPT ERROR: Invalid call. Nonexistent function 'new' in base 'GDScript'.
-          at: _check_instance_model (res://tests/core_smoke.gd:208)
-          GDScript backtrace (most recent call first):
-              [0] _check_instance_model (res://tests/core_smoke.gd:208)
-              [1] _ready (res://tests/core_smoke.gd:51)
-CORE_SMOKE FAIL checks=9 failures=8
+  ok   Material.Plastic is 256 (got 256)
+  ok   a child knows its parent
+  ok   the parent lists the child
+  FAIL a Part instance is a BasePart
+  ok   properties survive a set/get round trip
+  FAIL unset properties fall back to the class default
+  ok   removing a child unhooks both sides
+CORE_SMOKE FAIL checks=24 failures=13
+  - all_types.rbxlx has 1 roots (expected 5)
+  - demo_obby.rbxlx has 33 instances (expected 32)
+  - demo_obby.rbxlx has 4 roots (expected 1)
+  - demo_showcase.rbxlx has 48 instances (expected 46)
   - the reflection database knows Part
   - the reflection database knows MeshPart
   - Part is a BasePart
@@ -250,6 +386,13 @@ CORE_SMOKE FAIL checks=9 failures=8
   - Part.Shape is an enum (got '')
   - the default Part.Size is Vector3(4, 1.2, 2) (got <null>)
   - the default Part.Anchored is false
-  - Material.Plastic is 256 (got 0)
+  - a Part instance is a BasePart
+  - unset properties fall back to the class default
+WARNING: 96 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 1 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)
+ERROR: Pages in use exist at exit in PagedAllocator: N12VariantPools12BucketMediumE
+   at: ~PagedAllocator (./core/templates/paged_allocator.h:170)
 
---- Smoke / core / run 35460445184 / status failure / 2026-09-19T18:12:29Z ---
+--- Smoke / core / run 35460619229 / status failure / 2026-09-19T18:15:50Z ---
